@@ -12,19 +12,23 @@ document.addEventListener("DOMContentLoaded", () => {
         canvas.height = 1080;
 
         const imageCache = {};
+        let lastRenderedFrame = -1;
         
+        // Preload logic
         let preloadIndex = 1;
         function preloadNextBatch() {
-            const batchSize = 10;
+            const batchSize = 15;
             for(let i=0; i<batchSize && (preloadIndex + i) <= frameCount; i++) {
                 const idx = preloadIndex + i;
-                const image = new Image();
-                image.src = currentFrame(idx);
-                imageCache[idx] = image;
+                if (!imageCache[idx]) {
+                    const image = new Image();
+                    image.src = currentFrame(idx);
+                    imageCache[idx] = image;
+                }
             }
             preloadIndex += batchSize;
             if (preloadIndex <= frameCount) {
-                setTimeout(preloadNextBatch, 20);
+                setTimeout(preloadNextBatch, 50);
             }
         }
         
@@ -34,37 +38,65 @@ document.addEventListener("DOMContentLoaded", () => {
         img.onload = () => {
             context.drawImage(img, 0, 0, canvas.width, canvas.height);
             imageCache[1] = img;
+            lastRenderedFrame = 1;
             preloadIndex = 2;
-            preloadNextBatch(); // Start preloading rest after first load
+            preloadNextBatch();
         }
 
-        const updateImage = index => {
-            if (imageCache[index] && imageCache[index].complete) {
-                context.drawImage(imageCache[index], 0, 0, canvas.width, canvas.height);
+        const renderFrame = index => {
+            if (index === lastRenderedFrame) return;
+            
+            const image = imageCache[index];
+            if (image && image.complete && image.naturalWidth !== 0) {
+                context.drawImage(image, 0, 0, canvas.width, canvas.height);
+                lastRenderedFrame = index;
             } else {
-                const image = new Image();
-                image.src = currentFrame(index);
-                image.onload = () => {
-                   context.drawImage(image, 0, 0, canvas.width, canvas.height);
-                }
+                // Fallback for non-cached or non-loaded images
+                const nextImg = new Image();
+                nextImg.src = currentFrame(index);
+                nextImg.onload = () => {
+                    // Only draw if we haven't already moved past this frame
+                    if (Math.abs(lastRenderedFrame - index) < 5) {
+                        context.drawImage(nextImg, 0, 0, canvas.width, canvas.height);
+                        lastRenderedFrame = index;
+                    }
+                    imageCache[index] = nextImg;
+                };
             }
         }
 
+        let ticking = false;
         window.addEventListener('scroll', () => {  
-            const scrollTop = window.scrollY;
-            const maxScroll = Math.max(1, document.body.scrollHeight - window.innerHeight); // Spans the entire page
-            
-            let scrollFraction = scrollTop / maxScroll;
-            if (scrollFraction > 1) scrollFraction = 1;
-            if (scrollFraction < 0) scrollFraction = 0;
-            
-            const frameIndex = Math.min(
-                frameCount - 1,
-                Math.ceil(scrollFraction * frameCount)
-            );
-            
-            requestAnimationFrame(() => updateImage(frameIndex + 1));
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrollTop = window.scrollY;
+                    const docHeight = document.documentElement.scrollHeight;
+                    const winHeight = window.innerHeight;
+                    const maxScroll = Math.max(1, docHeight - winHeight);
+                    
+                    let scrollFraction = scrollTop / maxScroll;
+                    scrollFraction = Math.max(0, Math.min(1, scrollFraction));
+                    
+                    // Map fraction to frame index (1 to 383)
+                    const frameIndex = Math.floor(scrollFraction * (frameCount - 1)) + 1;
+                    
+                    renderFrame(frameIndex);
+                    ticking = false;
+                });
+                ticking = true;
+            }
         }, { passive: true });
+
+        // Update on resize too
+        window.addEventListener('resize', () => {
+            const scrollTop = window.scrollY;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            if (maxScroll > 0) {
+                const scrollFraction = scrollTop / maxScroll;
+                const frameIndex = Math.floor(scrollFraction * (frameCount - 1)) + 1;
+                renderFrame(frameIndex);
+            }
+        });
     }
 
     // Navigations & Views
