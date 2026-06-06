@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visual Horizer | Graphic Design</title>
+    <title>Visual Horizer | Essential Editing Styles</title>
     <link rel="icon" type="image/svg+xml" href="Images/favicon/favicon.svg">
     <link rel="icon" type="image/png" sizes="96x96" href="Images/favicon/favicon-96x96.png">
     <link rel="apple-touch-icon" sizes="180x180" href="Images/favicon/apple-touch-icon.png">
     <link rel="manifest" href="Images/favicon/site.webmanifest">
-    <meta name="description" content="Elite Graphic Design Portfolio - High-CTR Thumbnails, Branding, and Social Media Assets. Elevated visuals for top-tier creators.">
+    <meta name="description" content="Essential Editing Styles - Clean pacing, dynamic captions, and narrative assembly tailored for consistent content creators.">
     <!-- Open Graph tags for social sharing -->
-    <meta property="og:title" content="Visual Horizer | Graphic Design Portfolio">
-    <meta property="og:description" content="Elite Graphic Design - High-CTR Thumbnails, Branding, and Social Media Assets. Elevated visuals for top-tier creators.">
+    <meta property="og:title" content="Visual Horizer | Essential Editing Styles">
+    <meta property="og:description" content="Essential Editing Styles - Clean pacing, dynamic captions, and narrative assembly tailored for consistent content creators.">
     <meta property="og:image" content="Images/favicon/web-app-manifest-512x512.png">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,10 +28,9 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto 6rem;
             padding: 0 2rem;
-            align-items: start;
         }
 
         .video-card {
@@ -41,41 +40,31 @@
             border: 1px solid rgba(19, 52, 255, 0.2);
             transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
             position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
         }
 
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            padding-bottom: 56.25%; /* 16:9 Landscape Ratio */
             height: 0;
             overflow: hidden;
+            background: #000;
         }
 
-        .video-container.portrait {
-            padding-bottom: 56.25%; /* Same outer aspect ratio as 16:9 to match height */
-            background: rgba(0, 0, 0, 0.2);
-        }
-
-        .video-container.portrait img {
-            width: auto;
-            left: 50%;
-            transform: translateX(-50%);
-            aspect-ratio: 9 / 16;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.8);
-        }
-
-        .video-container img {
+        .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             border: none;
-            object-fit: cover;
         }
 
         .video-info {
             padding: 1.5rem;
+            flex-grow: 1;
         }
 
         .video-title {
@@ -121,7 +110,7 @@
             }
 
             .btn-back span {
-                display: none;
+                display: none; /* Hide "Back to Home" text */
             }
 
             .btn-back {
@@ -169,14 +158,45 @@
 
     <main id="main-content">
         <section class="portfolio-header">
-            <h1 class="section-title" style="font-size: 5.5rem; font-family: 'Psilograph', sans-serif; text-transform: uppercase;">GRAPHIC DESIGN PORTFOLIO</h1>
+            <h1 class="section-title" style="font-size: 5.5rem; font-family: 'Psilograph', sans-serif; text-transform: uppercase;">ESSENTIAL EDITING STYLES</h1>
             <div class="btn-back-wrap">
-                <a href="index.html" class="btn btn-back" style="text-decoration: none; display: inline-block;">&larr; <span>Back to Home</span></a>
+                <a href="index.html#pricing" class="btn btn-back" style="text-decoration: none; display: inline-block;">&larr; <span>Back to Pricing</span></a>
             </div>
         </section>
 
         <section class="portfolio-grid">
-            <!-- Content coming soon -->
+            <!-- Essential Video Edit 1 -->
+            <div class="video-card glass">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/1198926764" title="Vimeo video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Essential Editing Style Showcase - I</h3>
+                    <p class="video-desc">A clean, high-impact video edit highlighting essential narrative assembly, dynamic vertical framing (9:16), and engaging kinetic captions.</p>
+                </div>
+            </div>
+
+            <!-- Essential Video Edit 2 -->
+            <div class="video-card glass">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/1198927261" title="Vimeo video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Essential Editing Style Showcase - II</h3>
+                    <p class="video-desc">A dynamic showcase featuring vertical formatting (9:16), animated text captions, and clean pacing edits.</p>
+                </div>
+            </div>
+
+            <!-- Essential Video Edit 3 -->
+            <div class="video-card glass">
+                <div class="video-container">
+                    <iframe src="https://player.vimeo.com/video/1198927735" title="Vimeo video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Essential Editing Style Showcase - III</h3>
+                    <p class="video-desc">A clean horizontal edit featuring simple titles, smooth pacing, and balanced layout assembly.</p>
+                </div>
+            </div>
         </section>
     </main>
 

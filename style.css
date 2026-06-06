@@ -568,7 +568,7 @@ body::after {
 }
 
 .scard {
-    padding: 2.125rem;
+    padding: 1.75rem 2rem;
     border-radius: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     border: 1px solid rgba(19, 52, 255, 0.2);
@@ -617,7 +617,7 @@ body::after {
     font-size: 0.81rem;
     color: var(--text-secondary);
     line-height: 1.5;
-    margin-bottom: 1.7rem;
+    margin-bottom: 1.25rem;
     flex-grow: 1;
 }
 
@@ -919,7 +919,7 @@ body::after {
     z-index: 10;
 }
 
-.btn-contact-sales {
+.btn-contact-sales, .btn-visit-portfolio {
     padding: 0.6rem 1rem;
     font-size: 0.7rem;
     width: 100%;
@@ -933,9 +933,17 @@ body::after {
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1px;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
-.btn-contact-sales:hover {
+.btn-visit-portfolio {
+    margin-bottom: 0.75rem;
+    display: inline-block;
+}
+
+.btn-contact-sales:hover, .btn-visit-portfolio:hover {
     background: var(--color-500);
     color: #fff;
     box-shadow: 0 0 20px var(--color-500);
@@ -1426,7 +1434,7 @@ html, body {
 }
 
 .scard {
-    padding: 2.5rem;
+    padding: 1.75rem 2rem;
     border-radius: 20px;
     background: rgba(0, 1, 20, 0.4);
     border: 1px solid rgba(255, 255, 255, 0.05);

@@ -187,22 +187,25 @@ document.addEventListener("DOMContentLoaded", () => {
                     title: 'Essential Plan',
                     price: '₹399<span class="price-unit">/ video</span>', 
                     subtitle: 'Perfect for consistent weekly uploads.',
-                    features: '<li>Single Video Asset (16:9 & 9:16)</li><li>Essential Narrative Assembly</li><li>Dynamic Animated Captions</li><li>Standard Delivery Time</li>',
-                    badge: false
+                    features: '<li>20-60 Seconds Runtime</li><li>Single Video Asset (16:9 & 9:16)</li><li>Essential Narrative Assembly</li><li>Dynamic Animated Captions</li><li>Standard Delivery Time</li>',
+                    badge: false,
+                    portfolioUrl: 'essential-editing-styles.html'
                 },
                 { 
                     title: 'Standard Plan',
-                    price: '₹699<span class="price-unit">/ video</span>', 
+                    price: '₹799<span class="price-unit">/ video</span>', 
                     subtitle: 'Growth-focused editing for serious creators.',
-                    features: '<li>Retention-Optimized Editing</li><li>Premium Transitions & Overlays</li><li>AI-Enhanced Voice Isolation</li><li>Generative AI B-Roll</li>',
-                    badge: true
+                    features: '<li>20-60 Seconds Runtime</li><li>Retention-Optimized Editing</li><li>Premium Transitions & Overlays</li><li>Custom Motion Graphics</li><li>Generative AI B-Roll</li>',
+                    badge: true,
+                    portfolioUrl: 'standard-editing-styles.html'
                 },
                 { 
                     title: 'Premium Plan',
                     price: '₹1199<span class="price-unit">/ video</span>', 
                     subtitle: 'Dominate every platform with studio quality.',
-                    features: '<li>Up to 3 Minutes Runtime</li><li>Color Grading (Log/Raw)</li><li>Custom Motion Graphics</li><li>Full length Ai Video</li>',
-                    badge: false
+                    features: '<li>Up to 1 Minutes Runtime</li><li>Color Grading (Log/Raw)</li><li>Cinematic B-roll</li><li>Voice-over narration</li><li>cinematic sound design</li><li>Full length Ai Video</li>',
+                    badge: false,
+                    portfolioUrl: 'premium-editing-styles.html'
                 }
             ]
         },
@@ -214,21 +217,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     price: '₹299<span class="price-unit">/ unit</span>', 
                     subtitle: 'Maximum Click-Through Rate for YouTube & Social Media.',
                     features: '<li>Click-Logic Composition</li><li>Custom Typography</li><li>Psychological Framing</li><li>24-Hour Express Delivery</li>',
-                    badge: false
+                    badge: false,
+                    portfolioUrl: 'graphic-portfolio.html'
                 },
                 { 
                     title: 'Premium Social Creatives',
                     price: '₹499<span class="price-unit">/ unit</span>', 
                     subtitle: 'Designs that build trust and look like a million-dollar brand',
                     features: '<li>Platform-Optimized Layouts</li><li>Hyper-Realistic Manipulation</li><li>Brand-Consistent Aesthetics</li><li>Project Files Included</li>',
-                    badge: false
+                    badge: false,
+                    portfolioUrl: 'graphic-portfolio.html'
                 },
                 { 
                     title: 'Strategic Brand Identity',
                     price: '₹1199<span class="price-unit">/ package</span>', 
                     subtitle: "Creating a 'look' that allows you to charge more for your own products.",
                     features: '<li>Core Logo Design</li><li>Signature Color Palette</li><li>Typography System</li><li>Social Media Kit</li><li>Full Source Files</li>',
-                    badge: false
+                    badge: false,
+                    portfolioUrl: 'graphic-portfolio.html'
                 }
             ]
         },
@@ -299,6 +305,12 @@ document.addEventListener("DOMContentLoaded", () => {
                         featureElements[i].innerHTML = data.plans[i].features;
                         if (subtitleElements[i]) {
                             subtitleElements[i].innerHTML = data.plans[i].subtitle || '';
+                        }
+
+                        // Dynamically update Visit Portfolio button URLs
+                        const visitBtn = card.querySelector('.btn-visit-portfolio');
+                        if (visitBtn && data.plans[i].portfolioUrl) {
+                            visitBtn.setAttribute('href', data.plans[i].portfolioUrl);
                         }
                     }
                 }

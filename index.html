@@ -35,7 +35,7 @@
             <a href="#home">Home</a>
             <a href="#services">Services</a>
             <div class="nav-item dropdown">
-                <a href="#portfolio" class="dropdown-trigger">Portfolio</a>
+                <a href="#pricing" class="dropdown-trigger">Portfolio</a>
                 <div class="dropdown-content">
                     <a href="graphic-portfolio.html">Graphic Design</a>
                     <a href="video-portfolio.html">Video Editing</a>
@@ -61,7 +61,7 @@
         <div class="mobile-nav-links">
             <a href="#home" class="mobile-link">Home</a>
             <a href="#services" class="mobile-link">Services</a>
-            <a href="#portfolio" class="mobile-link">Portfolio</a>
+            <a href="#pricing" class="mobile-link">Portfolio</a>
             <a href="#pricing" class="mobile-link">Pricing</a>
             <a href="#about" class="mobile-link">About</a>
         </div>
@@ -77,7 +77,7 @@
                     <p class="hero-subtitle">where creativity meets perfection</p>
                     <div class="hero-actions">
                         <button class="btn btn-primary" id="btn-view-plans">View Plans</button>
-                        <a href="#portfolio" class="btn btn-primary" style="text-decoration: none;">Visit Portfolio</a>
+                        <a href="#pricing" class="btn btn-primary" style="text-decoration: none;">Visit Portfolio</a>
                     </div>
                 </div>
             </section>
@@ -85,10 +85,10 @@
             <!-- Services Section -->
             <section id="services" class="services">
                 <header class="services-header animate-fade-in">
-                    <h2 class="section-title">Service Overview & Portfolio</h2>
+                    <h2 class="section-title">Service Overview</h2>
                 </header>
 
-                <div class="services-grid" id="portfolio">
+                <div class="services-grid" id="services-grid">
                     <!-- Card 1 -->
                     <div class="scard glass animate-slide-up delay-1">
                         <div class="scard-icon-wrapper">
@@ -103,7 +103,6 @@
                             <li>Social Assets</li>
                             <li>Branding</li>
                         </ul>
-                        <a href="graphic-portfolio.html" class="scard-btn">Visit Portfolio</a>
                     </div>
                     
                     <!-- Card 2 -->
@@ -120,7 +119,6 @@
                             <li>Reels / TikToks</li>
                             <li>Color grading</li>
                         </ul>
-                        <a href="video-portfolio.html" class="scard-btn">Visit Portfolio</a>
                     </div>
 
                     <!-- Card 3 -->
@@ -139,7 +137,6 @@
                             <li>Kinetic Type</li>
                             <li>UI Animation</li>
                         </ul>
-                        <a href="motion-portfolio.html" class="scard-btn">Visit Portfolio</a>
                     </div>
                 </div>
 
@@ -275,7 +272,7 @@
 
             <!-- Pricing Section -->
             <section id="pricing" class="pricing">
-                <h2 class="section-title animate-fade-in">Pricing Structure</h2>
+                <h2 class="section-title animate-fade-in">Pricing & Portfolio</h2>
                 <div class="toggle-container animate-fade-in delay-1">
                     <div class="capsule-toggle" id="pricing-toggle">
                         <div class="capsule-pill" id="capsule-pill"></div>
@@ -291,24 +288,28 @@
                         <div class="price">₹399<span class="price-unit">/ video</span></div>
                         <div class="plan-subtitle">Perfect for consistent weekly uploads.</div>
                         <ul class="features">
+                            <li>20-60 Seconds Runtime</li>
                             <li>Single Video Asset (16:9 & 9:16)</li>
                             <li>Essential Narrative Assembly</li>
                             <li>Dynamic Animated Captions</li>
                             <li>Standard Delivery Time</li>
                         </ul>
+                        <a href="essential-editing-styles.html" target="_blank" class="btn btn-visit-portfolio">Visit Portfolio</a>
                         <button class="btn btn-contact-sales" data-plan="Essential">Contact Sales</button>
                     </div>
                     <div class="card glass animate-slide-up delay-2">
                         <div class="badge">MOST POPULAR</div>
                         <h3>Standard Plan</h3>
-                        <div class="price">₹699<span class="price-unit">/ video</span></div>
+                        <div class="price">₹799<span class="price-unit">/ video</span></div>
                         <div class="plan-subtitle">Growth-focused editing for serious creators.</div>
                         <ul class="features">
+                            <li>20-60 Seconds Runtime</li>
                             <li>Retention-Optimized Editing</li>
                             <li>Premium Transitions & Overlays</li>
-                            <li>AI-Enhanced Voice Isolation</li>
+                            <li>Custom Motion Graphics</li>
                             <li>Generative AI B-Roll</li>
                         </ul>
+                        <a href="standard-editing-styles.html" target="_blank" class="btn btn-visit-portfolio">Visit Portfolio</a>
                         <button class="btn btn-contact-sales" data-plan="Standard">Contact Sales</button>
                     </div>
                     <div class="card glass animate-slide-up delay-3">
@@ -316,11 +317,14 @@
                         <div class="price">₹1199<span class="price-unit">/ video</span></div>
                         <div class="plan-subtitle">Dominate every platform with studio quality.</div>
                         <ul class="features">
-                            <li>Up to 3 Minutes Runtime</li>
+                            <li>Up to 1 Minutes Runtime</li>
                             <li>Color Grading (Log/Raw)</li>
-                            <li>Custom Motion Graphics</li>
+                            <li>Cinematic B-roll</li>
+                            <li>Voice-over narration</li>
+                            <li>cinematic sound design</li>
                             <li>Full length Ai Video</li>
                         </ul>
+                        <a href="premium-editing-styles.html" target="_blank" class="btn btn-visit-portfolio">Visit Portfolio</a>
                         <button class="btn btn-contact-sales" data-plan="Premium">Contact Sales</button>
                     </div>
                 </div>
@@ -338,7 +342,10 @@
                                 <span class="point">Dynamic UI Mockups</span>
                             </div>
 
-                            <button class="btn btn-contact-sales banner-btn" data-plan="Motion Graphics">Get a Custom Quote</button>
+                            <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                                <a href="motion-portfolio.html" target="_blank" class="btn btn-visit-portfolio" style="width: auto; min-width: 250px; display: inline-block; margin: 0;">Visit Portfolio</a>
+                                <button class="btn btn-contact-sales" data-plan="Motion Graphics" style="width: auto; min-width: 250px; display: inline-block; margin: 0;">Get a Custom Quote</button>
+                            </div>
                         </div>
                     </div>
                 </div>
