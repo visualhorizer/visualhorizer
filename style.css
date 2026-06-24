@@ -758,71 +758,7 @@ body::after {
     transform: translateY(-2px);
 }
 
-/* Featured Work Section */
-.featured-work {
-    padding: 6rem 0 2rem 0;
-    max-width: 100%;
-    margin: 0 auto;
-    overflow-x: hidden;
-}
 
-.featured-header {
-    text-align: center;
-    margin-bottom: 2rem;
-    padding: 0 4rem;
-}
-
-.section-subtitle {
-    color: var(--color-200);
-    font-size: 1.125rem;
-    margin-top: 0.5rem;
-    letter-spacing: 0.05em;
-    font-weight: 300;
-}
-
-.marquee-wrapper {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    -webkit-mask-image: linear-gradient(to right, transparent, black 50%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 50%, transparent);
-}
-
-.featured-marquee {
-    display: flex;
-    width: max-content;
-    gap: 1.5rem;
-    padding: 1rem 0;
-    animation: featured-marquee-scroll 30s linear infinite;
-}
-
-@keyframes featured-marquee-scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-1 * (6 * 165px + 6 * 1.5rem))); }
-}
-
-.reel-container {
-    flex: 0 0 165px;
-    height: 290px;
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
-}
-
-.reel-container:hover {
-    transform: scale(1.03);
-}
-
-.reel-iframe {
-    position: absolute;
-    top: -42px;
-    left: -8px;
-    width: calc(100% + 16px) !important;
-    max-width: none !important;
-    height: 375px !important;
-    border: none !important;
-}
 
 /* Pricing Section */
 .pricing {
@@ -1833,14 +1769,7 @@ html, body {
         padding: 4rem 1.5rem 1rem !important;
     }
 
-    .featured-work {
-        padding: 4rem 1.5rem !important;
-    }
 
-    .featured-work .section-subtitle {
-        font-size: 0.6rem !important;
-        letter-spacing: 0.02em;
-    }
 
     .about {
         padding: 1rem 1.5rem 4rem !important;
@@ -2107,7 +2036,7 @@ html, body {
         padding: 0;
     }
 
-    .hero, .services, .pricing, .about, .portfolio, .contact, .featured-work {
+    .hero, .services, .pricing, .about, .portfolio, .contact {
         width: 100% !important;
         max-width: 100% !important;
         overflow: hidden !important;
