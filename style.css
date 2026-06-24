@@ -803,9 +803,10 @@ body::after {
 
 .reel-container {
     flex: 0 0 165px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 290px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
     transition: transform 0.3s ease;
 }
 
@@ -814,10 +815,13 @@ body::after {
 }
 
 .reel-iframe {
-    width: 100%;
-    max-width: 165px;
-    height: 290px;
-    border-radius: 12px;
+    position: absolute;
+    top: -42px;
+    left: -8px;
+    width: calc(100% + 16px) !important;
+    max-width: none !important;
+    height: 375px !important;
+    border: none !important;
 }
 
 /* Pricing Section */
