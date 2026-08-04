@@ -2051,6 +2051,10 @@ html, body {
         text-align: center;
     }
 
+    .about-header {
+        margin-bottom: 1rem !important;
+    }
+
     .about-text p {
         font-size: 0.55rem !important;
         line-height: 1.5 !important;
