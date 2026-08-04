@@ -142,164 +142,53 @@
 
                 <!-- Why Visual Horizer Section -->
                 <style>
-                    .why-section {
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        max-width: 1000px;
-                        margin: 5rem auto;
-                        padding: 0 2rem;
-                        gap: 4rem;
-                    }
-                    .why-left {
-                        flex: 1;
-                    }
-                    .why-subtitle {
-                        text-transform: uppercase;
-                        letter-spacing: 2px;
-                        font-size: 0.85rem;
-                        color: var(--text-secondary);
-                        margin-bottom: 1rem;
-                        display: flex;
-                        align-items: center;
-                        gap: 1rem;
-                    }
-                    .why-subtitle::before {
-                        content: "";
-                        display: inline-block;
-                        width: 40px;
-                        height: 1px;
-                        background: var(--accent);
-                    }
-                    .why-title {
-                        font-size: 3.5rem;
-                        font-weight: 800;
-                        line-height: 1.1;
-                        margin-bottom: 1.5rem;
-                        font-family: 'Syne', sans-serif;
-                        color: #fff;
-                    }
-                    .why-title span {
-                        color: var(--accent);
-                        display: block;
-                        font-style: italic;
-                    }
-                    .why-desc {
-                        font-size: 1.1rem;
-                        color: var(--text-secondary);
-                        line-height: 1.6;
-                        max-width: 400px;
-                    }
-                    .why-right {
-                        flex: 1;
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    .stat-row {
-                        display: flex;
-                        align-items: center;
-                        padding: 1.5rem 0;
-                        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                        gap: 2rem;
-                    }
-                    .stat-row:first-child {
-                        padding-top: 0;
-                    }
-                    .stat-row:last-child {
-                        border-bottom: none;
-                        padding-bottom: 0;
-                    }
-                    .stat-num-prefix {
-                        color: var(--accent);
-                        font-weight: 600;
-                        font-size: 1.1rem;
-                    }
-                    .stat-value-container {
-                        position: relative;
-                        display: inline-block;
-                    }
-                    .stat-value {
-                        font-size: 3rem;
-                        font-weight: 800;
-                        color: #fff;
-                        font-family: 'Syne', sans-serif;
-                        line-height: 1;
-                    }
-                    .stat-value-container::after {
-                        content: '';
-                        position: absolute;
-                        bottom: -5px;
-                        left: 0;
-                        width: 100%;
-                        height: 3px;
-                        background: var(--accent);
-                    }
-                    .stat-plus {
-                        color: var(--accent);
-                        font-size: 1.5rem;
-                        vertical-align: top;
-                    }
-                    .stat-label {
-                        text-align: right;
-                        flex-grow: 1;
-                        text-transform: uppercase;
-                        letter-spacing: 1px;
-                        font-size: 0.85rem;
-                        color: rgba(255, 255, 255, 0.7);
-                        line-height: 1.4;
-                    }
+                    .why-visual-horizer { margin: 6rem 0; text-align: center; }
+                    .why-visual-horizer .section-title { font-size: 2.5rem; margin-bottom: 0.5rem; }
+                    .why-visual-horizer .section-subtitle { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 3rem; }
+                    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; }
+                    .stat-card { padding: 2rem; border-radius: 16px; transition: transform 0.3s ease; }
+                    .stat-card:hover { transform: translateY(-5px); }
+                    .stat-number { font-size: 2.5rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; font-family: 'Poppins', sans-serif; }
+                    .stat-label { font-size: 0.9rem; color: var(--text-secondary); font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
 
                     @media (max-width: 768px) {
-                        .why-section {
-                            flex-direction: column;
-                            gap: 3rem;
-                            margin: 3rem auto;
-                        }
-                        .why-title {
-                            font-size: 2.5rem;
-                        }
-                        .stat-value {
-                            font-size: 2.5rem;
-                        }
+                        .why-visual-horizer { margin: 3rem 0; }
+                        .why-visual-horizer .section-title { font-size: 2rem; }
+                        .why-visual-horizer .section-subtitle { font-size: 0.9rem; margin-bottom: 2rem; }
+                        .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; padding: 0 1rem; }
+                        .stat-card { padding: 1.25rem; }
+                        .stat-number { font-size: 1.8rem; }
+                        .stat-label { font-size: 0.75rem; }
+                    }
+                    @media (max-width: 480px) {
+                        .stat-number { font-size: 1.5rem; }
+                        .stat-label { font-size: 0.65rem; }
+                        .stat-card { padding: 1rem; }
                     }
                 </style>
-                <div class="why-section animate-fade-in delay-2">
-                    <div class="why-left">
-                        <div class="why-subtitle">Our Impact</div>
-                        <h2 class="why-title">Why<br><span>Visual Horizer?</span></h2>
-                        <p class="why-desc">One year. Real results. No shortcuts.</p>
-                    </div>
-                    <div class="why-right">
-                        <div class="stat-row">
-                            <span class="stat-num-prefix">01</span>
-                            <div class="stat-value-container">
-                                <span class="stat-value">200<span class="stat-plus">+</span></span>
-                            </div>
-                            <span class="stat-label">Projects<br>Shipped</span>
+                <section class="why-visual-horizer">
+                    <h2 class="section-title animate-fade-in">Why Visual Horizer?</h2>
+                    <p class="section-subtitle animate-fade-in delay-1">One year. Real results. No shortcuts.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card glass animate-slide-up delay-1">
+                            <h3 class="stat-number">200+</h3>
+                            <p class="stat-label">Projects Shipped</p>
                         </div>
-                        <div class="stat-row">
-                            <span class="stat-num-prefix">02</span>
-                            <div class="stat-value-container">
-                                <span class="stat-value">20<span class="stat-plus">+</span></span>
-                            </div>
-                            <span class="stat-label">Clients<br>Served</span>
+                        <div class="stat-card glass animate-slide-up delay-2">
+                            <h3 class="stat-number">20+</h3>
+                            <p class="stat-label">Clients Served</p>
                         </div>
-                        <div class="stat-row">
-                            <span class="stat-num-prefix">03</span>
-                            <div class="stat-value-container">
-                                <span class="stat-value">1 Yr</span>
-                            </div>
-                            <span class="stat-label">Since<br>Day One</span>
+                        <div class="stat-card glass animate-slide-up delay-3">
+                            <h3 class="stat-number">1 Yr</h3>
+                            <p class="stat-label">Since Day One</p>
                         </div>
-                        <div class="stat-row">
-                            <span class="stat-num-prefix">04</span>
-                            <div class="stat-value-container">
-                                <span class="stat-value">3<span class="stat-plus">+</span></span>
-                            </div>
-                            <span class="stat-label">Countries<br>Reached</span>
+                        <div class="stat-card glass animate-slide-up delay-4">
+                            <h3 class="stat-number">3+</h3>
+                            <p class="stat-label">Countries Reached</p>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <!-- Testimonials Section -->
                 <style>
