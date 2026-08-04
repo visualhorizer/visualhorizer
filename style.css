@@ -1811,8 +1811,19 @@ html, body {
     }
 
     .pricing-grid, .pricing-cards:not(.hidden) {
-        grid-template-columns: 1fr !important;
-        gap: 2rem;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem !important;
+        padding-bottom: 1rem !important;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .pricing-grid::-webkit-scrollbar, .pricing-cards::-webkit-scrollbar {
+        display: none;
     }
 
     .services-grid {
@@ -1835,8 +1846,21 @@ html, body {
     /* Support for both grid types */
     #pricing-grid:not(.hidden) {
         display: flex !important;
-        flex-direction: column;
-        gap: 2rem;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 1rem !important;
+        padding-bottom: 1rem !important;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    #pricing-grid .card, .pricing-cards .card {
+        flex: 0 0 85% !important;
+        scroll-snap-align: center;
+        box-sizing: border-box !important;
     }
 
     #pricing-wide:not(.hidden) {
