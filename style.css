@@ -2004,7 +2004,7 @@ html, body {
 
     .value-box {
         flex: 0 0 100px;
-        padding: 0.6rem !important;
+        padding: 0.625rem !important;
         min-height: 70px;
     }
 
