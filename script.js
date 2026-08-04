@@ -184,23 +184,20 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const pricingDotsContainer = document.querySelector('.pricing-dots-container');
-            const pricingDots = document.querySelectorAll('.pricing-dot');
 
             if (currentCategory === 'Motion Graphics') {
                 pricingGrid.classList.add('hidden');
                 pricingWide.classList.remove('hidden');
-                if (pricingDotsContainer) pricingDotsContainer.style.display = 'none';
+                if (pricingDotsContainer) pricingDotsContainer.style.setProperty('display', 'none', 'important');
             } else {
                 pricingGrid.classList.remove('hidden');
                 pricingWide.classList.add('hidden');
-                if (pricingDotsContainer) pricingDotsContainer.style.display = 'flex';
-                
-                // Reset scroll position and dots active state
+                if (pricingDotsContainer) pricingDotsContainer.style.setProperty('display', '', '');
+                // Reset scroll position and dots on category switch
                 pricingGrid.scrollLeft = 0;
+                const pricingDots = document.querySelectorAll('.pricing-dot');
                 if (pricingDots.length > 0) {
-                    pricingDots.forEach((dot, idx) => {
-                        dot.classList.toggle('active', idx === 0);
-                    });
+                    pricingDots.forEach((dot, idx) => dot.classList.toggle('active', idx === 0));
                 }
                 
                 // Update grid UI dynamically
@@ -425,32 +422,34 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Pricing Mobile Dots Pagination Sync & Click
+    // Pricing Cards Dots Sync & Click
     const pricingGridElement = document.getElementById('pricing-grid');
-    const pricingDotsElements = document.querySelectorAll('.pricing-dot');
+    const pricingDots = document.querySelectorAll('.pricing-dot');
 
-    if (pricingGridElement && pricingDotsElements.length > 0) {
+    if (pricingGridElement && pricingDots.length > 0) {
+        const updatePricingDots = (index) => {
+            pricingDots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === index);
+            });
+        };
+
         pricingGridElement.addEventListener('scroll', () => {
-            const maxScroll = pricingGridElement.scrollWidth - pricingGridElement.clientWidth;
-            if (maxScroll > 0) {
-                const ratio = pricingGridElement.scrollLeft / maxScroll;
-                let activeIdx = 0;
-                if (ratio >= 0.7) {
-                    activeIdx = 2;
-                } else if (ratio >= 0.3) {
-                    activeIdx = 1;
+            const cardWidth = pricingGridElement.clientWidth;
+            if (cardWidth > 0) {
+                const index = Math.round(pricingGridElement.scrollLeft / cardWidth);
+                if (index >= 0 && index < pricingDots.length) {
+                    updatePricingDots(index);
                 }
-                pricingDotsElements.forEach((dot, idx) => {
-                    dot.classList.toggle('active', idx === activeIdx);
-                });
             }
         });
 
-        pricingDotsElements.forEach((dot, idx) => {
+        pricingDots.forEach((dot, idx) => {
             dot.addEventListener('click', () => {
-                const maxScroll = pricingGridElement.scrollWidth - pricingGridElement.clientWidth;
-                const targetScroll = (idx / (pricingDotsElements.length - 1)) * maxScroll;
-                pricingGridElement.scrollTo({ left: targetScroll, behavior: 'smooth' });
+                const cardWidth = pricingGridElement.clientWidth;
+                if (cardWidth > 0) {
+                    pricingGridElement.scrollTo({ left: idx * cardWidth, behavior: 'smooth' });
+                    updatePricingDots(idx);
+                }
             });
         });
     }

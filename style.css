@@ -1816,7 +1816,7 @@ html, body {
         align-items: center;
         gap: 0.4rem;
         margin-top: 0.75rem !important;
-        margin-bottom: 1.25rem !important;
+        margin-bottom: 1.5rem !important;
     }
     .pricing-dot {
         width: 6px;
