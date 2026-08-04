@@ -1846,6 +1846,8 @@ html, body {
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         gap: 1rem !important;
+        width: 100vw !important;
+        margin-left: calc(-50vw + 50%) !important;
         padding-left: 1.5rem !important;
         padding-right: 1.5rem !important;
         padding-bottom: 1rem !important;
@@ -1883,6 +1885,8 @@ html, body {
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         gap: 1rem !important;
+        width: 100vw !important;
+        margin-left: calc(-50vw + 50%) !important;
         padding-left: 1.5rem !important;
         padding-right: 1.5rem !important;
         padding-bottom: 1rem !important;
