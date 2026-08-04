@@ -183,12 +183,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
+            const pricingDotsContainer = document.querySelector('.pricing-dots-container');
+            const pricingDots = document.querySelectorAll('.pricing-dot');
+
             if (currentCategory === 'Motion Graphics') {
                 pricingGrid.classList.add('hidden');
                 pricingWide.classList.remove('hidden');
+                if (pricingDotsContainer) pricingDotsContainer.style.display = 'none';
             } else {
                 pricingGrid.classList.remove('hidden');
                 pricingWide.classList.add('hidden');
+                if (pricingDotsContainer) pricingDotsContainer.style.display = 'flex';
+                
+                // Reset scroll position and dots active state
+                pricingGrid.scrollLeft = 0;
+                if (pricingDots.length > 0) {
+                    pricingDots.forEach((dot, idx) => {
+                        dot.classList.toggle('active', idx === 0);
+                    });
+                }
                 
                 // Update grid UI dynamically
                 if(data && priceElements.length === 3) {
@@ -410,6 +423,36 @@ document.addEventListener("DOMContentLoaded", () => {
         if (window.innerWidth <= 768) {
             startAutoSwipe();
         }
+    }
+
+    // Pricing Mobile Dots Pagination Sync & Click
+    const pricingGridElement = document.getElementById('pricing-grid');
+    const pricingDotsElements = document.querySelectorAll('.pricing-dot');
+
+    if (pricingGridElement && pricingDotsElements.length > 0) {
+        pricingGridElement.addEventListener('scroll', () => {
+            const maxScroll = pricingGridElement.scrollWidth - pricingGridElement.clientWidth;
+            if (maxScroll > 0) {
+                const ratio = pricingGridElement.scrollLeft / maxScroll;
+                let activeIdx = 0;
+                if (ratio >= 0.7) {
+                    activeIdx = 2;
+                } else if (ratio >= 0.3) {
+                    activeIdx = 1;
+                }
+                pricingDotsElements.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === activeIdx);
+                });
+            }
+        });
+
+        pricingDotsElements.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                const maxScroll = pricingGridElement.scrollWidth - pricingGridElement.clientWidth;
+                const targetScroll = (idx / (pricingDotsElements.length - 1)) * maxScroll;
+                pricingGridElement.scrollTo({ left: targetScroll, behavior: 'smooth' });
+            });
+        });
     }
 
 });

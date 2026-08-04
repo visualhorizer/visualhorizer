@@ -542,7 +542,7 @@ body::after {
     line-height: 1.6;
 }
 
-.services-dots-container {
+.services-dots-container, .pricing-dots-container {
     display: none;
 }
 
@@ -1804,6 +1804,29 @@ html, body {
         cursor: pointer;
     }
     .service-dot.active {
+        width: 18px;
+        border-radius: 4px;
+        background: var(--color-400, #6b8aff);
+        box-shadow: 0 0 10px var(--color-400, #6b8aff);
+    }
+
+    .pricing-dots-container {
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        gap: 0.4rem;
+        margin-top: 0.75rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+    .pricing-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.25);
+        transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        cursor: pointer;
+    }
+    .pricing-dot.active {
         width: 18px;
         border-radius: 4px;
         background: var(--color-400, #6b8aff);
