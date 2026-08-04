@@ -1774,7 +1774,12 @@ html, body {
     }
     
     .pricing {
-        padding: 0.75rem 1.5rem 1rem !important;
+        padding: 0.75rem 0 1rem 0 !important;
+    }
+
+    .pricing .section-title, .pricing .toggle-container {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
     }
 
 
@@ -1841,9 +1846,12 @@ html, body {
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         gap: 1rem !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
         padding-bottom: 1rem !important;
         scrollbar-width: none;
         -ms-overflow-style: none;
+        box-sizing: border-box !important;
     }
     .pricing-grid::-webkit-scrollbar, .pricing-cards::-webkit-scrollbar {
         display: none;
@@ -1875,9 +1883,12 @@ html, body {
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
         gap: 1rem !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
         padding-bottom: 1rem !important;
         scrollbar-width: none;
         -ms-overflow-style: none;
+        box-sizing: border-box !important;
     }
 
     #pricing-grid .card, .pricing-cards .card {
