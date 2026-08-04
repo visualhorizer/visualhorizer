@@ -332,19 +332,33 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollObserver.observe(el);
     });
 
-    // Service Overview Mobile Scroll Indicator Pill Sync
+    // Service Overview Mobile Dots Pagination Sync & Click
     const servicesGrid = document.getElementById('services-grid');
-    const servicesThumb = document.getElementById('services-scroll-thumb');
+    const serviceDots = document.querySelectorAll('.service-dot');
 
-    if (servicesGrid && servicesThumb) {
+    if (servicesGrid && serviceDots.length > 0) {
         servicesGrid.addEventListener('scroll', () => {
             const maxScroll = servicesGrid.scrollWidth - servicesGrid.clientWidth;
             if (maxScroll > 0) {
-                const scrollRatio = servicesGrid.scrollLeft / maxScroll;
-                // Track width (50px) - Thumb width (25px) = 25px max translation
-                const maxTranslate = 25; 
-                servicesThumb.style.transform = `translateX(${scrollRatio * maxTranslate}px)`;
+                const ratio = servicesGrid.scrollLeft / maxScroll;
+                let activeIdx = 0;
+                if (ratio >= 0.7) {
+                    activeIdx = 2;
+                } else if (ratio >= 0.3) {
+                    activeIdx = 1;
+                }
+                serviceDots.forEach((dot, idx) => {
+                    dot.classList.toggle('active', idx === activeIdx);
+                });
             }
+        });
+
+        serviceDots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => {
+                const maxScroll = servicesGrid.scrollWidth - servicesGrid.clientWidth;
+                const targetScroll = (idx / (serviceDots.length - 1)) * maxScroll;
+                servicesGrid.scrollTo({ left: targetScroll, behavior: 'smooth' });
+            });
         });
     }
 

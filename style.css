@@ -542,7 +542,7 @@ body::after {
     line-height: 1.6;
 }
 
-.services-scroll-indicator-container {
+.services-dots-container {
     display: none;
 }
 
@@ -1787,30 +1787,27 @@ html, body {
         margin-bottom: 0.5rem !important;
     }
 
-    .services-scroll-indicator-container {
+    .services-dots-container {
         display: flex !important;
         justify-content: center;
+        align-items: center;
+        gap: 0.4rem;
         margin-top: 0.75rem !important;
         margin-bottom: 0.25rem !important;
     }
-    .services-scroll-track {
-        width: 50px;
-        height: 3px;
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 3px;
-        position: relative;
-        overflow: hidden;
+    .service-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.25);
+        transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+        cursor: pointer;
     }
-    .services-scroll-thumb {
-        width: 25px;
-        height: 3px;
+    .service-dot.active {
+        width: 18px;
+        border-radius: 4px;
         background: var(--color-400, #6b8aff);
-        border-radius: 3px;
-        box-shadow: 0 0 8px var(--color-400, #6b8aff);
-        position: absolute;
-        left: 0;
-        top: 0;
-        transition: transform 0.05s ease-out;
+        box-shadow: 0 0 10px var(--color-400, #6b8aff);
     }
 
     .pricing-grid, .pricing-cards:not(.hidden) {
