@@ -332,34 +332,84 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollObserver.observe(el);
     });
 
-    // Service Overview Mobile Dots Pagination Sync & Click
+    // Service Overview Mobile Cards Auto-Swipe & Dots Sync
     const servicesGrid = document.getElementById('services-grid');
     const serviceDots = document.querySelectorAll('.service-dot');
 
     if (servicesGrid && serviceDots.length > 0) {
+        let currentCardIndex = 0;
+        let autoSwipeInterval = null;
+        let isUserInteracting = false;
+        let pauseTimeout = null;
+
+        const updateDots = (index) => {
+            serviceDots.forEach((dot, idx) => {
+                dot.classList.toggle('active', idx === index);
+            });
+        };
+
+        const scrollToCard = (index) => {
+            const cardWidth = servicesGrid.clientWidth;
+            if (cardWidth > 0) {
+                servicesGrid.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+                updateDots(index);
+            }
+        };
+
+        const nextCard = () => {
+            if (isUserInteracting) return;
+            currentCardIndex = (currentCardIndex + 1) % serviceDots.length;
+            scrollToCard(currentCardIndex);
+        };
+
+        const startAutoSwipe = () => {
+            stopAutoSwipe();
+            autoSwipeInterval = setInterval(nextCard, 2200);
+        };
+
+        const stopAutoSwipe = () => {
+            if (autoSwipeInterval) clearInterval(autoSwipeInterval);
+        };
+
+        const handleUserInteraction = () => {
+            isUserInteracting = true;
+            stopAutoSwipe();
+            if (pauseTimeout) clearTimeout(pauseTimeout);
+            pauseTimeout = setTimeout(() => {
+                isUserInteracting = false;
+                startAutoSwipe();
+            }, 4000);
+        };
+
+        // Scroll listener to update dots when manually swiped
         servicesGrid.addEventListener('scroll', () => {
-            const maxScroll = servicesGrid.scrollWidth - servicesGrid.clientWidth;
-            if (maxScroll > 0) {
-                const ratio = servicesGrid.scrollLeft / maxScroll;
-                let activeIdx = 0;
-                if (ratio >= 0.7) {
-                    activeIdx = 2;
-                } else if (ratio >= 0.3) {
-                    activeIdx = 1;
+            const cardWidth = servicesGrid.clientWidth;
+            if (cardWidth > 0) {
+                const index = Math.round(servicesGrid.scrollLeft / cardWidth);
+                if (index >= 0 && index < serviceDots.length) {
+                    currentCardIndex = index;
+                    updateDots(currentCardIndex);
                 }
-                serviceDots.forEach((dot, idx) => {
-                    dot.classList.toggle('active', idx === activeIdx);
-                });
             }
         });
 
+        // Touch & Mouse events for user interaction
+        servicesGrid.addEventListener('touchstart', handleUserInteraction, { passive: true });
+        servicesGrid.addEventListener('mousedown', handleUserInteraction);
+
+        // Click dots to scroll directly
         serviceDots.forEach((dot, idx) => {
             dot.addEventListener('click', () => {
-                const maxScroll = servicesGrid.scrollWidth - servicesGrid.clientWidth;
-                const targetScroll = (idx / (serviceDots.length - 1)) * maxScroll;
-                servicesGrid.scrollTo({ left: targetScroll, behavior: 'smooth' });
+                handleUserInteraction();
+                currentCardIndex = idx;
+                scrollToCard(currentCardIndex);
             });
         });
+
+        // Start auto-swipe loop on mobile screens
+        if (window.innerWidth <= 768) {
+            startAutoSwipe();
+        }
     }
 
 });
