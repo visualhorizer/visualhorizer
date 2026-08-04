@@ -1884,6 +1884,7 @@ html, body {
         flex: 0 0 85% !important;
         scroll-snap-align: center;
         box-sizing: border-box !important;
+        padding: 1.5rem 1.25rem !important;
     }
 
     #pricing-wide:not(.hidden) {
