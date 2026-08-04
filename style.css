@@ -761,21 +761,21 @@ body::after {
     display: flex;
     position: relative;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 50px;
-    padding: 6px;
+    border-radius: 25px;
+    padding: 3px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .capsule-pill {
     position: absolute;
-    top: 6px;
-    left: 6px;
-    height: calc(100% - 12px);
-    width: 140px;
+    top: 3px;
+    left: 3px;
+    height: calc(100% - 6px);
+    width: 70px;
     background: var(--color-500);
-    border-radius: 50px;
+    border-radius: 25px;
     transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    box-shadow: 0 0 15px var(--color-500);
+    box-shadow: 0 0 8px var(--color-500);
     z-index: 1;
 }
 
@@ -785,13 +785,13 @@ body::after {
     background: transparent;
     border: none;
     color: var(--text-secondary);
-    padding: 0.6rem 0;
-    font-size: 0.81rem; /* Matched 85% reduction */
+    padding: 0.3rem 0;
+    font-size: 0.55rem;
     font-weight: 600;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 25px;
     transition: color 0.3s ease;
-    width: 140px;
+    width: 70px;
     text-align: center;
     white-space: nowrap;
 }
@@ -1762,7 +1762,10 @@ html, body {
         margin-bottom: 2rem !important;
     }
 
-
+    .pricing-grid, .pricing-cards:not(.hidden) {
+        grid-template-columns: 1fr !important;
+        gap: 2rem;
+    }
 
     .services-grid {
         display: flex !important;
@@ -1779,74 +1782,11 @@ html, body {
         display: none;
     }
 
-    /* Support for both grid types - Horizontal arrangement for Pricing */
-    .pricing-cards:not(.hidden), #pricing-grid:not(.hidden) {
+    /* Support for both grid types */
+    #pricing-grid:not(.hidden) {
         display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: nowrap !important;
-        overflow-x: auto !important;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        gap: 0.75rem !important;
-        padding-bottom: 1rem !important;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
-    }
-    #pricing-grid::-webkit-scrollbar {
-        display: none;
-    }
-
-    .pricing .card {
-        flex: 0 0 calc(50% - 0.375rem) !important;
-        scroll-snap-align: start;
-        padding: 1rem 0.75rem !important;
-        border-radius: 12px !important;
-    }
-
-    .pricing .card h3 {
-        font-size: 0.75rem !important;
-        margin-bottom: 0.3rem !important;
-    }
-
-    .pricing .price {
-        font-size: 1rem !important;
-        margin-bottom: 0.4rem !important;
-    }
-
-    .pricing .price-unit {
-        font-size: 0.5rem !important;
-    }
-
-    .pricing .plan-subtitle {
-        font-size: 0.55rem !important;
-        line-height: 1.3 !important;
-        margin-bottom: 0.6rem !important;
-    }
-
-    .pricing .features {
-        padding-left: 0.4rem !important;
-        margin-bottom: 0.75rem !important;
-    }
-
-    .pricing .features li {
-        font-size: 0.525rem !important;
-        margin-bottom: 0.3rem !important;
-        line-height: 1.3 !important;
-    }
-
-    .pricing .btn-visit-portfolio,
-    .pricing .btn-contact-sales {
-        padding: 0.35rem 0.5rem !important;
-        font-size: 0.5rem !important;
-        margin-bottom: 0.35rem !important;
-        border-radius: 20px !important;
-        letter-spacing: 0.5px !important;
-    }
-
-    .pricing .badge {
-        font-size: 0.45rem !important;
-        padding: 0.2rem 0.5rem !important;
-        border-bottom-left-radius: 6px !important;
+        flex-direction: column;
+        gap: 2rem;
     }
 
     #pricing-wide:not(.hidden) {
@@ -2015,21 +1955,26 @@ html, body {
 
     .capsule-toggle {
         gap: 0;
+        padding: 3px !important;
         background: rgba(255, 255, 255, 0.05) !important;
         backdrop-filter: blur(15px) !important;
         -webkit-backdrop-filter: blur(15px) !important;
         border: 1px solid rgba(255, 255, 255, 0.1) !important;
-        border-radius: 40px !important;
+        border-radius: 20px !important;
     }
 
     .toggle-option {
-        font-size: 0.55rem;
-        padding: 0.6rem 0;
-        width: 95px;
+        font-size: 0.38rem;
+        padding: 0.3rem 0;
+        width: 48px;
     }
 
     .capsule-pill {
-        width: 95px;
+        width: 48px;
+        top: 3px;
+        left: 3px;
+        height: calc(100% - 6px);
+        border-radius: 20px;
     }
 
     /* About Us Mobile */
