@@ -1761,6 +1761,10 @@ html, body {
     .services-header {
         margin-bottom: 2rem !important;
     }
+    
+    .mobile-hidden {
+        display: none !important;
+    }
 
     .pricing-grid, .pricing-cards:not(.hidden) {
         grid-template-columns: 1fr !important;
