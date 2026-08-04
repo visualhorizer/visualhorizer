@@ -1768,8 +1768,18 @@ html, body {
     }
 
     .services-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
         gap: 0.75rem !important;
+        padding-bottom: 1rem !important;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .services-grid::-webkit-scrollbar {
+        display: none;
     }
 
     /* Support for both grid types */
@@ -1784,6 +1794,8 @@ html, body {
     }
 
     .services-grid .scard {
+        flex: 0 0 calc(50% - 0.375rem) !important;
+        scroll-snap-align: start;
         padding: 0.75rem !important;
     }
     
