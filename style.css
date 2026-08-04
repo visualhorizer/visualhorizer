@@ -1761,10 +1761,6 @@ html, body {
     .services-header {
         margin-bottom: 2rem !important;
     }
-    
-    .mobile-hidden {
-        display: none !important;
-    }
 
     .pricing-grid, .pricing-cards:not(.hidden) {
         grid-template-columns: 1fr !important;
@@ -1775,18 +1771,58 @@ html, body {
         display: flex !important;
         flex-direction: row !important;
         overflow-x: auto;
-        scroll-snap-type: x mandatory;
         gap: 1rem;
         padding-bottom: 1.5rem;
+        scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    
+    .services-grid::-webkit-scrollbar {
+        display: none;
     }
 
-    .services-grid::-webkit-scrollbar {
-        height: 4px;
+    .services-grid .scard {
+        flex: 0 0 auto;
+        width: 45vw;
+        min-width: 140px;
+        max-width: 180px;
+        scroll-snap-align: center;
+        padding: 1.25rem 1rem !important;
     }
-    .services-grid::-webkit-scrollbar-thumb {
-        background: rgba(255,255,255,0.2);
-        border-radius: 4px;
+
+    .services-grid .scard-icon-wrapper {
+        width: 28px !important;
+        height: 28px !important;
+        margin-bottom: 0.75rem !important;
+        border-radius: 8px;
+    }
+
+    .services-grid .scard-icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .services-grid .scard-title {
+        font-size: 0.8rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+
+    .services-grid .scard-desc {
+        font-size: 0.65rem !important;
+        margin-bottom: 0.75rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .services-grid .scard-bullets {
+        margin-bottom: 0 !important;
+        padding-left: 0.5rem !important;
+    }
+
+    .services-grid .scard-bullets li {
+        font-size: 0.65rem !important;
+        margin-bottom: 0.4rem !important;
+        gap: 6px !important;
     }
 
     /* Support for both grid types */
@@ -1800,58 +1836,11 @@ html, body {
         display: block !important;
     }
 
-    .card {
+    .scard, .card {
         padding: 2rem 1.5rem;
         text-align: left;
         align-items: flex-start;
         min-height: auto;
-    }
-
-    .scard {
-        flex: 0 0 160px;
-        scroll-snap-align: center;
-        padding: 1rem 0.8rem;
-        text-align: left;
-        align-items: flex-start;
-        min-height: auto;
-        border-radius: 12px;
-    }
-
-    .scard .scard-icon-wrapper {
-        width: 28px;
-        height: 28px;
-        margin-bottom: 0.75rem;
-        border-radius: 8px;
-    }
-
-    .scard .scard-icon {
-        width: 14px;
-        height: 14px;
-    }
-
-    .scard .scard-title {
-        font-size: 0.85rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .scard .scard-desc {
-        font-size: 0.65rem;
-        margin-bottom: 0.75rem;
-        line-height: 1.4;
-    }
-
-    .scard .scard-bullets li {
-        font-size: 0.6rem;
-        margin-bottom: 0.4rem;
-        gap: 5px;
-    }
-
-    .scard .scard-bullets li::before {
-        width: 4px;
-        height: 4px;
-    }
-
-    .scard, .card {
         background: rgba(255, 255, 255, 0.05) !important;
         backdrop-filter: blur(20px) !important;
         -webkit-backdrop-filter: blur(20px) !important;
