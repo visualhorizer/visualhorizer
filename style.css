@@ -1784,13 +1784,14 @@ html, body {
     }
 
     .services-header {
-        margin-bottom: 1.25rem !important;
+        margin-bottom: 0.5rem !important;
     }
 
     .services-scroll-indicator-container {
         display: flex !important;
         justify-content: center;
-        margin-bottom: 1.25rem;
+        margin-top: 0.75rem !important;
+        margin-bottom: 0.25rem !important;
     }
     .services-scroll-track {
         width: 50px;
