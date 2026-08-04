@@ -2075,3 +2075,36 @@ html, body {
 .delay-4 { transition-delay: 0.7s; }
 .delay-5 { transition-delay: 0.9s; }
 .delay-6 { transition-delay: 1.1s; }
+
+/* Testimonials Styling */
+.testimonials-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.testimonial-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+.testimonial-author {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .testimonials-title {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+    .testimonial-text {
+        font-size: 0.65rem;
+        line-height: 1.5;
+    }
+    .testimonial-author {
+        font-size: 0.55rem;
+    }
+}
