@@ -2022,17 +2022,28 @@ html, body {
     }
 
     /* About Us Mobile */
-    .about-hero-wrapper {
+    .about-top-wrapper {
         background: rgba(255, 255, 255, 0.03) !important;
         backdrop-filter: blur(20px) !important;
         -webkit-backdrop-filter: blur(20px) !important;
         border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
         border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
         box-shadow: inset 0 0 25px rgba(19, 52, 255, 0.08) !important;
-        padding: 2rem 1.25rem 1.75rem 1.25rem !important;
-        margin: 1.5rem 0 2.5rem 0 !important;
-        width: 100% !important;
+        padding: 2rem 1.25rem 2rem 1.25rem !important;
+        margin-top: 1.5rem !important;
+        margin-bottom: 2.5rem !important;
+        width: 100vw !important;
+        position: relative !important;
+        left: 50% !important;
+        right: 50% !important;
+        margin-left: -50vw !important;
+        margin-right: -50vw !important;
         box-sizing: border-box !important;
+        text-align: center;
+    }
+
+    .about .services-header {
+        margin-bottom: 4rem !important;
     }
 
     /* Workflow Section Mobile */
