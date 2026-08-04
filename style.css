@@ -1112,6 +1112,10 @@ body::after {
     text-align: center;
 }
 
+.about-top-wrapper {
+    text-align: center;
+}
+
 .quote-signature {
     font-size: 1.15rem;
     font-weight: 700;
@@ -1120,16 +1124,20 @@ body::after {
     color: var(--color-300);
     margin-top: 1.5rem;
     text-shadow: 0 0 15px rgba(100, 219, 255, 0.4);
+    text-align: center;
 }
 
 .about-text {
     max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .about-text h3 {
     font-size: 2rem;
     margin-bottom: 2rem;
     font-weight: 600;
+    text-align: center;
 }
 
 .about-text p {
@@ -1137,6 +1145,7 @@ body::after {
     line-height: 1.8;
     margin-bottom: 2rem;
     font-size: 1rem;
+    text-align: center;
 }
 
 .workflow-title {
@@ -2039,16 +2048,7 @@ html, body {
         margin-left: -50vw !important;
         margin-right: -50vw !important;
         box-sizing: border-box !important;
-        text-align: center !important;
-    }
-
-    .about-top-wrapper .section-title,
-    .about-top-wrapper .about-text,
-    .about-top-wrapper .about-text p,
-    .about-top-wrapper .quote-signature {
-        text-align: center !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
+        text-align: center;
     }
 
     .about .services-header {
