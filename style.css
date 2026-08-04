@@ -2039,7 +2039,16 @@ html, body {
         margin-left: -50vw !important;
         margin-right: -50vw !important;
         box-sizing: border-box !important;
-        text-align: center;
+        text-align: center !important;
+    }
+
+    .about-top-wrapper .section-title,
+    .about-top-wrapper .about-text,
+    .about-top-wrapper .about-text p,
+    .about-top-wrapper .quote-signature {
+        text-align: center !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
     }
 
     .about .services-header {
