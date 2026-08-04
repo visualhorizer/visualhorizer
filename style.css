@@ -1147,23 +1147,23 @@ body::after {
 .about-values {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 0.625rem;
+    gap: 1.25rem;
     width: 100%;
     margin: 0 auto;
 }
 
 .value-box {
-    padding: 0.9rem 0.5rem;
+    padding: 1.8rem 1rem;
     position: relative;
     overflow: hidden;
     transition: all 0.4s ease;
     text-align: center;
-    min-height: 90px;
+    min-height: 180px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     min-width: 0;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 .value-box::before {
     display: none !important;
@@ -1171,22 +1171,22 @@ body::after {
 
 .value-num {
     position: absolute;
-    top: 0.5rem;
-    right: 0.75rem;
-    font-size: 1.35rem;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2.7rem;
     font-weight: 800;
     opacity: 0.05;
     color: #fff;
 }
 
 .value-box h4 {
-    font-size: 0.625rem;
-    margin-bottom: 0.25rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
     color: var(--color-300);
 }
 
 .value-box p {
-    font-size: 0.425rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
     line-height: 1.6;
 }
@@ -2003,22 +2003,22 @@ html, body {
     }
 
     .value-box {
-        flex: 0 0 200px; /* Compact width */
-        padding: 1.25rem !important;
-        min-height: 140px;
+        flex: 0 0 100px;
+        padding: 0.6rem !important;
+        min-height: 70px;
     }
 
     .value-num {
-        font-size: 0.65rem !important;
+        font-size: 0.35rem !important;
     }
 
     .value-box h4 {
-        font-size: 0.8rem !important;
-        margin-bottom: 0.3rem !important;
+        font-size: 0.4rem !important;
+        margin-bottom: 0.15rem !important;
     }
 
     .value-box p {
-        font-size: 0.7rem !important;
+        font-size: 0.35rem !important;
         line-height: 1.3 !important;
     }
 
