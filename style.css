@@ -1896,7 +1896,7 @@ html, body {
     }
 
     #pricing-grid .card, .pricing-cards .card {
-        flex: 0 0 72% !important;
+        flex: 0 0 70% !important;
         scroll-snap-align: center;
         box-sizing: border-box !important;
         padding: 1.25rem 1rem !important;
