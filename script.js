@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const navContactBtn = document.querySelector('.nav-contact');
     if (navContactBtn) {
         navContactBtn.addEventListener('click', () => {
-            const phone = "9539856350";
+            const phone = "919048856350";
             const message = "Hi, I am reaching out from your website. I'd like to discuss a project with Visual Horizer.";
             const encodedMsg = encodeURIComponent(message);
             window.open(`https://wa.me/${phone}?text=${encodedMsg}`, '_blank');
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (pricingFooterContainer) {
         pricingFooterContainer.addEventListener('click', (e) => {
             if (e.target.classList.contains('highlight-text')) {
-                const phone = "9048856350";
+                const phone = "919048856350";
                 const message = "Hi, I am interested in custom deliverables. I'd like to discuss a project with Visual Horizer.";
                 const encodedMsg = encodeURIComponent(message);
                 window.open(`https://wa.me/${phone}?text=${encodedMsg}`, '_blank');
@@ -225,7 +225,7 @@ document.addEventListener("DOMContentLoaded", () => {
     contactSalesBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const plan = btn.getAttribute('data-plan');
-            const phone = "9048856350";
+            const phone = "919048856350";
             const message = `Hi, I am interested in the ${plan} plan for ${currentCategory}.`;
             const encodedMsg = encodeURIComponent(message);
             const whatappUrl = `https://wa.me/${phone}?text=${encodedMsg}`;
@@ -289,7 +289,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (btnInitiateOrder) {
         btnInitiateOrder.addEventListener('click', () => {
             const details = calculateBundlePrice();
-            const phone = "9048856350";
+            const phone = "919048856350";
             // Message format: "I want to build a bundle. Qty: [X], Style: [Y], Extras: [Z], Est. Total: [Price]."
             const message = `I want to build a bundle. Qty: ${details.qty}, Style: ${details.style}, Extras: ${details.extras}, Est. Total: $${details.total}.`;
             const encodedMsg = encodeURIComponent(message);
