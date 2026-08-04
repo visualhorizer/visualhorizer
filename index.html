@@ -140,6 +140,167 @@
                     </div>
                 </div>
 
+                <!-- Why Visual Horizer Section -->
+                <style>
+                    .why-section {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        max-width: 1000px;
+                        margin: 5rem auto;
+                        padding: 0 2rem;
+                        gap: 4rem;
+                    }
+                    .why-left {
+                        flex: 1;
+                    }
+                    .why-subtitle {
+                        text-transform: uppercase;
+                        letter-spacing: 2px;
+                        font-size: 0.85rem;
+                        color: var(--text-secondary);
+                        margin-bottom: 1rem;
+                        display: flex;
+                        align-items: center;
+                        gap: 1rem;
+                    }
+                    .why-subtitle::before {
+                        content: "";
+                        display: inline-block;
+                        width: 40px;
+                        height: 1px;
+                        background: var(--accent);
+                    }
+                    .why-title {
+                        font-size: 3.5rem;
+                        font-weight: 800;
+                        line-height: 1.1;
+                        margin-bottom: 1.5rem;
+                        font-family: 'Syne', sans-serif;
+                        color: #fff;
+                    }
+                    .why-title span {
+                        color: var(--accent);
+                        display: block;
+                        font-style: italic;
+                    }
+                    .why-desc {
+                        font-size: 1.1rem;
+                        color: var(--text-secondary);
+                        line-height: 1.6;
+                        max-width: 400px;
+                    }
+                    .why-right {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    .stat-row {
+                        display: flex;
+                        align-items: center;
+                        padding: 1.5rem 0;
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                        gap: 2rem;
+                    }
+                    .stat-row:first-child {
+                        padding-top: 0;
+                    }
+                    .stat-row:last-child {
+                        border-bottom: none;
+                        padding-bottom: 0;
+                    }
+                    .stat-num-prefix {
+                        color: var(--accent);
+                        font-weight: 600;
+                        font-size: 1.1rem;
+                    }
+                    .stat-value-container {
+                        position: relative;
+                        display: inline-block;
+                    }
+                    .stat-value {
+                        font-size: 3rem;
+                        font-weight: 800;
+                        color: #fff;
+                        font-family: 'Syne', sans-serif;
+                        line-height: 1;
+                    }
+                    .stat-value-container::after {
+                        content: '';
+                        position: absolute;
+                        bottom: -5px;
+                        left: 0;
+                        width: 100%;
+                        height: 3px;
+                        background: var(--accent);
+                    }
+                    .stat-plus {
+                        color: var(--accent);
+                        font-size: 1.5rem;
+                        vertical-align: top;
+                    }
+                    .stat-label {
+                        text-align: right;
+                        flex-grow: 1;
+                        text-transform: uppercase;
+                        letter-spacing: 1px;
+                        font-size: 0.85rem;
+                        color: rgba(255, 255, 255, 0.7);
+                        line-height: 1.4;
+                    }
+
+                    @media (max-width: 768px) {
+                        .why-section {
+                            flex-direction: column;
+                            gap: 3rem;
+                            margin: 3rem auto;
+                        }
+                        .why-title {
+                            font-size: 2.5rem;
+                        }
+                        .stat-value {
+                            font-size: 2.5rem;
+                        }
+                    }
+                </style>
+                <div class="why-section animate-fade-in delay-2">
+                    <div class="why-left">
+                        <div class="why-subtitle">Our Impact</div>
+                        <h2 class="why-title">Why<br><span>Visual Horizer?</span></h2>
+                        <p class="why-desc">One year. Real results. No shortcuts.</p>
+                    </div>
+                    <div class="why-right">
+                        <div class="stat-row">
+                            <span class="stat-num-prefix">01</span>
+                            <div class="stat-value-container">
+                                <span class="stat-value">200<span class="stat-plus">+</span></span>
+                            </div>
+                            <span class="stat-label">Projects<br>Shipped</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-num-prefix">02</span>
+                            <div class="stat-value-container">
+                                <span class="stat-value">20<span class="stat-plus">+</span></span>
+                            </div>
+                            <span class="stat-label">Clients<br>Served</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-num-prefix">03</span>
+                            <div class="stat-value-container">
+                                <span class="stat-value">1 Yr</span>
+                            </div>
+                            <span class="stat-label">Since<br>Day One</span>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-num-prefix">04</span>
+                            <div class="stat-value-container">
+                                <span class="stat-value">3<span class="stat-plus">+</span></span>
+                            </div>
+                            <span class="stat-label">Countries<br>Reached</span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Testimonials Section -->
                 <style>
                     .testimonials-section { margin-top: 3rem; margin-bottom: 2rem; }
@@ -191,65 +352,7 @@
                 </div>
             </section>
 
-            <!-- Why Visual Horizer Section -->
-            <section id="why-us" class="why-us">
-                <div class="why-us-container">
-                    <div class="why-us-left animate-fade-in">
-                        <div class="why-us-eyebrow">
-                            <span class="eyebrow-line"></span>
-                            <span>VISUAL<br>HORIZER</span>
-                        </div>
-                        <h2 class="why-us-title">
-                            Why<br>
-                            <span class="highlight-red">Visual</span><br>
-                            <span class="highlight-red">Horizer?</span>
-                        </h2>
-                        <p class="why-us-desc">One year. Real results. No shortcuts.</p>
-                    </div>
-                    <div class="why-us-right">
-                        <div class="stat-row animate-slide-up delay-1">
-                            <div class="stat-number-wrapper">
-                                <span class="stat-index">01</span>
-                                <div class="stat-value-container">
-                                    <span class="stat-value">200<span class="stat-plus">+</span></span>
-                                    <div class="stat-underline"></div>
-                                </div>
-                            </div>
-                            <div class="stat-label">PROJECTS<br>SHIPPED</div>
-                        </div>
-                        <div class="stat-row animate-slide-up delay-2">
-                            <div class="stat-number-wrapper">
-                                <span class="stat-index">02</span>
-                                <div class="stat-value-container">
-                                    <span class="stat-value">20<span class="stat-plus">+</span></span>
-                                    <div class="stat-underline"></div>
-                                </div>
-                            </div>
-                            <div class="stat-label">CLIENTS<br>SERVED</div>
-                        </div>
-                        <div class="stat-row animate-slide-up delay-3">
-                            <div class="stat-number-wrapper">
-                                <span class="stat-index">03</span>
-                                <div class="stat-value-container">
-                                    <span class="stat-value">1</span>
-                                    <div class="stat-underline"></div>
-                                </div>
-                            </div>
-                            <div class="stat-label">YR SINCE<br>DAY ONE</div>
-                        </div>
-                        <div class="stat-row animate-slide-up delay-4">
-                            <div class="stat-number-wrapper">
-                                <span class="stat-index">04</span>
-                                <div class="stat-value-container">
-                                    <span class="stat-value">3<span class="stat-plus">+</span></span>
-                                    <div class="stat-underline"></div>
-                                </div>
-                            </div>
-                            <div class="stat-label">COUNTRIES<br>REACHED</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+
 
             <!-- Pricing Section -->
             <section id="pricing" class="pricing">
