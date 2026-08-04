@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     portfolioUrl: 'essential-editing-styles.html'
                 },
                 { 
-                    title: 'Standard Plan',
+                    title: 'Growth Plan',
                     price: '₹799<span class="price-unit">/ video</span>', 
                     subtitle: 'Growth-focused editing for serious creators.',
                     features: '<li>20-60 Seconds Runtime</li><li>Retention-Optimized Editing</li><li>Premium Transitions & Overlays</li><li>Custom Motion Graphics</li><li>Generative AI B-Roll</li>',
