@@ -542,6 +542,10 @@ body::after {
     line-height: 1.6;
 }
 
+.services-scroll-indicator-container {
+    display: none;
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -1771,7 +1775,32 @@ html, body {
     }
 
     .services-header {
-        margin-bottom: 2rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+
+    .services-scroll-indicator-container {
+        display: flex !important;
+        justify-content: center;
+        margin-bottom: 1.25rem;
+    }
+    .services-scroll-track {
+        width: 50px;
+        height: 3px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 3px;
+        position: relative;
+        overflow: hidden;
+    }
+    .services-scroll-thumb {
+        width: 25px;
+        height: 3px;
+        background: var(--color-400, #6b8aff);
+        border-radius: 3px;
+        box-shadow: 0 0 8px var(--color-400, #6b8aff);
+        position: absolute;
+        left: 0;
+        top: 0;
+        transition: transform 0.05s ease-out;
     }
 
     .pricing-grid, .pricing-cards:not(.hidden) {

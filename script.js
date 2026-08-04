@@ -332,4 +332,20 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollObserver.observe(el);
     });
 
+    // Service Overview Mobile Scroll Indicator Pill Sync
+    const servicesGrid = document.getElementById('services-grid');
+    const servicesThumb = document.getElementById('services-scroll-thumb');
+
+    if (servicesGrid && servicesThumb) {
+        servicesGrid.addEventListener('scroll', () => {
+            const maxScroll = servicesGrid.scrollWidth - servicesGrid.clientWidth;
+            if (maxScroll > 0) {
+                const scrollRatio = servicesGrid.scrollLeft / maxScroll;
+                // Track width (50px) - Thumb width (25px) = 25px max translation
+                const maxTranslate = 25; 
+                servicesThumb.style.transform = `translateX(${scrollRatio * maxTranslate}px)`;
+            }
+        });
+    }
+
 });
