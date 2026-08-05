@@ -2164,8 +2164,8 @@ html, body {
 
     .value-box {
         flex: 0 0 140px !important;
-        padding: 0.85rem 0.75rem !important;
-        min-height: 110px !important;
+        padding: 0.85rem 0.75rem 0.35rem 0.75rem !important;
+        min-height: 85px !important;
     }
 
     .value-num {
@@ -2180,6 +2180,7 @@ html, body {
     .value-box p {
         font-size: 0.65rem !important;
         line-height: 1.25 !important;
+        margin-bottom: 0 !important;
     }
 
 @keyframes workflow-marquee {
