@@ -2158,14 +2158,15 @@ html, body {
         flex-wrap: nowrap !important;
         width: max-content;
         gap: 0.75rem !important;
-        padding: 0 0.75rem 1rem !important;
+        padding: 0 0.75rem 0.25rem !important;
         animation: workflow-marquee 30s linear infinite;
     }
 
     .value-box {
         flex: 0 0 140px !important;
-        padding: 0.85rem 0.75rem 0.35rem 0.75rem !important;
-        min-height: 85px !important;
+        padding: 0.75rem 0.75rem 0.25rem 0.75rem !important;
+        min-height: auto !important;
+        height: auto !important;
     }
 
     .value-num {
