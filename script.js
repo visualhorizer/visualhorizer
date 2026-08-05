@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     subtitle: 'Perfect for consistent weekly uploads.',
                     features: '<li>20-60 Seconds Runtime</li><li>Single Video Asset (16:9 & 9:16)</li><li>Essential Narrative Assembly</li><li>Dynamic Animated Captions</li><li>Standard Delivery Time</li>',
                     badge: false,
-                    portfolioUrl: 'essential-editing-styles.html'
+                    portfolioUrl: 'essential-editing-styles'
                 },
                 { 
                     title: 'Growth Plan',
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     subtitle: 'Growth-focused editing for serious creators.',
                     features: '<li>20-60 Seconds Runtime</li><li>Retention-Optimized Editing</li><li>Premium Transitions & Overlays</li><li>Custom Motion Graphics</li><li>Generative AI B-Roll</li>',
                     badge: true,
-                    portfolioUrl: 'standard-editing-styles.html'
+                    portfolioUrl: 'standard-editing-styles'
                 },
                 { 
                     title: 'Premium Plan',
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     subtitle: 'Dominate every platform with studio quality.',
                     features: '<li>Up to 1 Minutes Runtime</li><li>Color Grading (Log/Raw)</li><li>Cinematic B-roll</li><li>Voice-over narration</li><li>cinematic sound design</li><li>Full length Ai Video</li>',
                     badge: false,
-                    portfolioUrl: 'premium-editing-styles.html'
+                    portfolioUrl: 'premium-editing-styles'
                 }
             ]
         },
@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     subtitle: 'Maximum Click-Through Rate for YouTube & Social Media.',
                     features: '<li>Click-Logic Composition</li><li>Custom Typography</li><li>Psychological Framing</li><li>24-Hour Express Delivery</li>',
                     badge: false,
-                    portfolioUrl: 'graphic-portfolio.html'
+                    portfolioUrl: 'graphic-portfolio'
                 },
                 { 
                     title: 'Premium Social Creatives',
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     subtitle: 'Designs that build trust and look like a million-dollar brand',
                     features: '<li>Platform-Optimized Layouts</li><li>Hyper-Realistic Manipulation</li><li>Brand-Consistent Aesthetics</li><li>Project Files Included</li>',
                     badge: false,
-                    portfolioUrl: 'graphic-portfolio.html'
+                    portfolioUrl: 'graphic-portfolio'
                 },
                 { 
                     title: 'Strategic Brand Identity',
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     subtitle: "Creating a 'look' that allows you to charge more for your own products.",
                     features: '<li>Core Logo Design</li><li>Signature Color Palette</li><li>Typography System</li><li>Social Media Kit</li><li>Full Source Files</li>',
                     badge: false,
-                    portfolioUrl: 'graphic-portfolio.html'
+                    portfolioUrl: 'graphic-portfolio'
                 }
             ]
         },
