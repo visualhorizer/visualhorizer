@@ -1911,6 +1911,27 @@ html, body {
         padding: 1.5rem 1.25rem !important;
     }
 
+    #pricing-grid .btn-visit-portfolio,
+    #pricing-grid .btn-contact-sales,
+    .pricing-cards .btn-visit-portfolio,
+    .pricing-cards .btn-contact-sales {
+        padding: 0.4rem 0.75rem !important;
+        font-size: 0.65rem !important;
+        height: 36px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border-radius: 20px !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    #pricing-grid .btn-visit-portfolio,
+    .pricing-cards .btn-visit-portfolio {
+        margin-bottom: 0.5rem !important;
+    }
+
     #pricing-wide:not(.hidden) {
         display: block !important;
     }
