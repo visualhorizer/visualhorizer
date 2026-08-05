@@ -16,6 +16,32 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Smooth scroll for all internal anchor links (Home, Services, Portfolio, Pricing, About) preventing hash addition to URL
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href');
+            if (targetId && targetId !== '#') {
+                e.preventDefault();
+
+                // If bundle view is open, switch back to main default view first
+                if (bundleView && !bundleView.classList.contains('hidden')) {
+                    bundleView.classList.add('hidden');
+                    if (defaultView) defaultView.classList.remove('hidden');
+                }
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+
+                // Close mobile overlay menu if active
+                if (mobileOverlay && mobileOverlay.classList.contains('active')) {
+                    mobileOverlay.classList.remove('active');
+                }
+            }
+        });
+    });
+
     // Switch between default view and bundle view
     if (btnBuildBundle) {
         btnBuildBundle.addEventListener('click', () => {
