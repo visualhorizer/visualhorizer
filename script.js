@@ -357,9 +357,9 @@ document.addEventListener("DOMContentLoaded", () => {
         };
 
         const scrollToCard = (index) => {
-            const cardWidth = servicesGrid.clientWidth;
-            if (cardWidth > 0) {
-                servicesGrid.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+            if (servicesGrid.children[index]) {
+                const targetLeft = servicesGrid.children[index].offsetLeft - servicesGrid.offsetLeft - 24;
+                servicesGrid.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
                 updateDots(index);
             }
         };
@@ -391,9 +391,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Scroll listener to update dots when manually swiped
         servicesGrid.addEventListener('scroll', () => {
-            const cardWidth = servicesGrid.clientWidth;
-            if (cardWidth > 0) {
-                const index = Math.round(servicesGrid.scrollLeft / cardWidth);
+            const firstCard = servicesGrid.children[0];
+            if (firstCard) {
+                const step = firstCard.offsetWidth + 16;
+                const index = Math.round(servicesGrid.scrollLeft / step);
                 if (index >= 0 && index < serviceDots.length) {
                     currentCardIndex = index;
                     updateDots(currentCardIndex);

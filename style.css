@@ -1869,11 +1869,16 @@ html, body {
         overflow-x: auto !important;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
-        gap: 0.75rem !important;
+        gap: 1rem !important;
+        width: 100vw !important;
+        margin-left: calc(-50vw + 50%) !important;
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
         padding-bottom: 0.25rem !important;
         margin-bottom: 0 !important;
         scrollbar-width: none;
         -ms-overflow-style: none;
+        box-sizing: border-box !important;
     }
 
     .services-grid::-webkit-scrollbar {
@@ -1911,9 +1916,9 @@ html, body {
     }
 
     .services-grid .scard {
-        flex: 0 0 100% !important;
+        flex: 0 0 85% !important;
         scroll-snap-align: center;
-        padding: 1.25rem 1.5rem !important;
+        padding: 1.25rem 1.25rem !important;
         background: transparent !important;
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
