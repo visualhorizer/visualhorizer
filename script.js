@@ -183,22 +183,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-            const pricingDotsContainer = document.querySelector('.pricing-dots-container');
+            const pricingScrollbarContainer = document.querySelector('.pricing-scrollbar-container');
 
             if (currentCategory === 'Motion Graphics') {
                 pricingGrid.classList.add('hidden');
                 pricingWide.classList.remove('hidden');
-                if (pricingDotsContainer) pricingDotsContainer.style.setProperty('display', 'none', 'important');
+                if (pricingScrollbarContainer) pricingScrollbarContainer.style.setProperty('display', 'none', 'important');
             } else {
                 pricingGrid.classList.remove('hidden');
                 pricingWide.classList.add('hidden');
-                if (pricingDotsContainer) pricingDotsContainer.style.setProperty('display', '', '');
-                // Reset scroll position and dots on category switch
+                if (pricingScrollbarContainer) pricingScrollbarContainer.style.setProperty('display', '', '');
+                // Reset scroll position and thumb position on category switch
                 pricingGrid.scrollLeft = 0;
-                const pricingDots = document.querySelectorAll('.pricing-dot');
-                if (pricingDots.length > 0) {
-                    pricingDots.forEach((dot, idx) => dot.classList.toggle('active', idx === 0));
-                }
+                const pricingThumb = document.querySelector('.pricing-scrollbar-thumb');
+                if (pricingThumb) pricingThumb.style.transform = 'translateX(0%)';
                 
                 // Update grid UI dynamically
                 if(data && priceElements.length === 3) {
@@ -422,35 +420,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Pricing Cards Dots Sync & Click
+    // Pricing Cards Scrollbar Sync
     const pricingGridElement = document.getElementById('pricing-grid');
-    const pricingDots = document.querySelectorAll('.pricing-dot');
+    const pricingThumb = document.querySelector('.pricing-scrollbar-thumb');
 
-    if (pricingGridElement && pricingDots.length > 0) {
-        const updatePricingDots = (index) => {
-            pricingDots.forEach((dot, idx) => {
-                dot.classList.toggle('active', idx === index);
-            });
-        };
-
+    if (pricingGridElement && pricingThumb) {
         pricingGridElement.addEventListener('scroll', () => {
-            const cardWidth = pricingGridElement.clientWidth;
-            if (cardWidth > 0) {
-                const index = Math.round(pricingGridElement.scrollLeft / cardWidth);
-                if (index >= 0 && index < pricingDots.length) {
-                    updatePricingDots(index);
-                }
+            const maxScroll = pricingGridElement.scrollWidth - pricingGridElement.clientWidth;
+            if (maxScroll > 0) {
+                const ratio = Math.min(Math.max(pricingGridElement.scrollLeft / maxScroll, 0), 1);
+                pricingThumb.style.transform = `translateX(${ratio * 200}%)`;
             }
-        });
-
-        pricingDots.forEach((dot, idx) => {
-            dot.addEventListener('click', () => {
-                const cardWidth = pricingGridElement.clientWidth;
-                if (cardWidth > 0) {
-                    pricingGridElement.scrollTo({ left: idx * cardWidth, behavior: 'smooth' });
-                    updatePricingDots(idx);
-                }
-            });
         });
     }
 

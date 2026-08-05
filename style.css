@@ -542,7 +542,7 @@ body::after {
     line-height: 1.6;
 }
 
-.services-dots-container, .pricing-dots-container {
+.services-dots-container, .pricing-scrollbar-container {
     display: none;
 }
 
@@ -1815,27 +1815,32 @@ html, body {
         box-shadow: 0 0 10px var(--color-400, #6b8aff);
     }
 
-    .pricing-dots-container {
+    .pricing-scrollbar-container {
         display: flex !important;
         justify-content: center;
         align-items: center;
-        gap: 0.4rem;
         margin-top: 0.75rem !important;
         margin-bottom: 1.5rem !important;
     }
-    .pricing-dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.25);
-        transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-        cursor: pointer;
+    .pricing-scrollbar-track {
+        width: 80px;
+        height: 3px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 3px;
+        position: relative;
+        overflow: hidden;
     }
-    .pricing-dot.active {
-        width: 18px;
-        border-radius: 4px;
+    .pricing-scrollbar-thumb {
+        width: 33.333%;
+        height: 100%;
         background: var(--color-400, #6b8aff);
-        box-shadow: 0 0 10px var(--color-400, #6b8aff);
+        border-radius: 3px;
+        box-shadow: 0 0 8px var(--color-400, #6b8aff);
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(0%);
+        transition: transform 0.05s linear;
     }
 
     .pricing-grid, .pricing-cards:not(.hidden) {
@@ -1896,35 +1901,10 @@ html, body {
     }
 
     #pricing-grid .card, .pricing-cards .card {
-        flex: 0 0 70% !important;
+        flex: 0 0 85% !important;
         scroll-snap-align: center;
         box-sizing: border-box !important;
-        padding: 1.25rem 1rem !important;
-    }
-    #pricing-grid .card h3, .pricing-cards .card h3 {
-        font-size: 1.05rem !important;
-        margin-bottom: 0.25rem !important;
-    }
-    #pricing-grid .card .price, .pricing-cards .card .price {
-        font-size: 1.35rem !important;
-        margin-bottom: 0.5rem !important;
-    }
-    #pricing-grid .card .plan-subtitle, .pricing-cards .card .plan-subtitle {
-        font-size: 0.72rem !important;
-        line-height: 1.4 !important;
-        margin-bottom: 0.75rem !important;
-    }
-    #pricing-grid .card .features, .pricing-cards .card .features {
-        font-size: 0.7rem !important;
-        margin-bottom: 1rem !important;
-    }
-    #pricing-grid .card .features li, .pricing-cards .card .features li {
-        margin-bottom: 0.35rem !important;
-    }
-    #pricing-grid .card .btn, .pricing-cards .card .btn {
-        padding: 0.6rem 1rem !important;
-        font-size: 0.75rem !important;
-        margin-top: 0.5rem !important;
+        padding: 1.5rem 1.25rem !important;
     }
 
     #pricing-wide:not(.hidden) {
