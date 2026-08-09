@@ -546,7 +546,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Testimonials Mobile Auto-Swipe Loop
-    const testimonialCards = document.querySelectorAll('.testimonials-grid .testimonial-content');
+    const testimonialCards = document.querySelectorAll('.testimonials-unified-box .testimonial-content');
 
     if (testimonialCards.length > 1) {
         let currentTestimonialIndex = 0;

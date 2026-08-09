@@ -208,32 +208,36 @@
                     <style>
                         .testimonials-section { margin-top: 2rem; margin-bottom: 1.5rem; text-align: center; }
                         .testimonials-section .section-title { font-size: 1rem; margin-bottom: 1rem; }
-                        .testimonials-grid {
+                        .testimonials-unified-box {
                             display: flex;
                             justify-content: center;
                             align-items: stretch;
-                            gap: 1.5rem;
-                            max-width: 1050px;
+                            max-width: 1000px;
                             margin: 0 auto;
-                            padding: 0 1rem;
+                            padding: 1.5rem 1.25rem;
+                            border-radius: 20px;
                             box-sizing: border-box;
                         }
                         .testimonial-content {
                             flex: 1;
                             min-width: 0;
-                            max-width: 500px;
                             text-align: center;
-                            padding: 1.25rem 1.5rem;
-                            border-radius: 16px;
+                            padding: 0.5rem 1.25rem;
                             display: flex;
                             flex-direction: column;
                             justify-content: space-between;
                             box-sizing: border-box;
                             transition: opacity 0.4s ease;
                         }
+                        .testimonial-divider {
+                            width: 1px;
+                            background: rgba(255, 255, 255, 0.15);
+                            margin: 0 0.25rem;
+                            flex-shrink: 0;
+                        }
                         .testimonial-text {
                             font-size: 0.76rem;
-                            line-height: 1.5;
+                            line-height: 1.55;
                             font-style: italic;
                             margin-bottom: 0.75rem;
                             color: rgba(255, 255, 255, 0.85);
@@ -242,16 +246,17 @@
                         @media (max-width: 768px) {
                             .testimonials-section { margin-top: 1rem; margin-bottom: 0; }
                             .testimonials-section .section-title { font-size: 0.6rem !important; margin-bottom: 0.6rem; }
-                            .testimonials-grid { display: block; padding: 0 0.5rem; }
-                            .testimonial-content { width: calc(100% - 2rem) !important; max-width: none !important; padding: 0.8rem; margin: 0 auto; }
+                            .testimonials-unified-box { padding: 0.8rem; margin: 0 1rem; width: auto !important; }
+                            .testimonial-content { width: 100% !important; padding: 0 !important; }
+                            .testimonial-divider { display: none !important; }
                             .testimonial-text { font-size: 0.55rem; line-height: 1.4; margin-bottom: 0.5rem; }
                         }
                     </style>
                     <div class="testimonials-section animate-fade-in delay-4">
                         <h2 class="section-title" style="text-transform: uppercase; letter-spacing: 1.5px;">WHAT OUR CLIENTS SAY</h2>
-                        <div class="testimonials-grid">
+                        <div class="testimonials-unified-box glass">
                             <!-- Testimonial 1 (5 Stars) -->
-                            <div class="testimonial-content glass" id="testimonial-1">
+                            <div class="testimonial-content" id="testimonial-1">
                                 <p class="testimonial-text">
                                     "I received the video, it's really good, the video was super. It has been done even better than what I expected. I really liked it. Keep it up. I have gotten videos edited by two or three other editors before this. But I have never received a response like this, like the one I got from here. It's really good."
                                 </p>
@@ -264,8 +269,11 @@
                                 </div>
                             </div>
 
+                            <!-- Thin Vertical Line Divider -->
+                            <div class="testimonial-divider"></div>
+
                             <!-- Testimonial 2 (4 Stars + 1 Unfilled Star) -->
-                            <div class="testimonial-content glass" id="testimonial-2">
+                            <div class="testimonial-content" id="testimonial-2">
                                 <p class="testimonial-text">
                                     "The video is super. You have done everything that I said. To watch it, and the visualization, it is super. It has turned out really well. Matching the story, the visuals have been given really well."
                                 </p>
