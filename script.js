@@ -545,47 +545,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Testimonials Mobile Auto-Swipe Loop
+    // Testimonials Display
     const testimonialCards = document.querySelectorAll('.testimonials-unified-box .testimonial-content');
-
-    if (testimonialCards.length > 1) {
-        let currentTestimonialIndex = 0;
-        let testimonialInterval = null;
-
-        const updateTestimonialsMobile = () => {
-            if (window.innerWidth <= 768) {
-                testimonialCards.forEach((card, idx) => {
-                    if (idx === currentTestimonialIndex) {
-                        card.style.display = 'flex';
-                        card.style.opacity = '1';
-                    } else {
-                        card.style.display = 'none';
-                        card.style.opacity = '0';
-                    }
-                });
-            } else {
-                testimonialCards.forEach(card => {
-                    card.style.display = 'flex';
-                    card.style.opacity = '1';
-                });
-            }
-        };
-
-        const cycleTestimonials = () => {
-            currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialCards.length;
-            updateTestimonialsMobile();
-        };
-
-        const startTestimonialAutoSwipe = () => {
-            if (testimonialInterval) clearInterval(testimonialInterval);
-            updateTestimonialsMobile();
-            if (window.innerWidth <= 768) {
-                testimonialInterval = setInterval(cycleTestimonials, 2200);
-            }
-        };
-
-        startTestimonialAutoSwipe();
-        window.addEventListener('resize', startTestimonialAutoSwipe);
+    if (testimonialCards.length > 0) {
+        testimonialCards.forEach(card => {
+            card.style.display = 'flex';
+            card.style.opacity = '1';
+        });
     }
 
 });
