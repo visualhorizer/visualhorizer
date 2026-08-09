@@ -1851,6 +1851,7 @@ html, body {
         overflow-x: auto !important;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
         gap: 1rem !important;
         width: 100vw !important;
         margin-left: calc(-50vw + 50%) !important;
@@ -1871,6 +1872,7 @@ html, body {
         overflow-x: auto !important;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
         gap: 1rem !important;
         width: 100vw !important;
         margin-left: calc(-50vw + 50%) !important;
@@ -1895,6 +1897,7 @@ html, body {
         overflow-x: auto !important;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
+        touch-action: pan-x;
         gap: 1rem !important;
         width: 100vw !important;
         margin-left: calc(-50vw + 50%) !important;
@@ -1909,6 +1912,7 @@ html, body {
     #pricing-grid .card, .pricing-cards .card {
         flex: 0 0 85% !important;
         scroll-snap-align: center;
+        touch-action: pan-x pan-y;
         box-sizing: border-box !important;
         padding: 1.5rem 1.25rem !important;
     }

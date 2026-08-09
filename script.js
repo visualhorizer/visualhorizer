@@ -219,10 +219,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 pricingGrid.classList.remove('hidden');
                 pricingWide.classList.add('hidden');
                 if (pricingScrollbarContainer) pricingScrollbarContainer.style.setProperty('display', '', '');
-                // Reset scroll position and thumb position on category switch
-                pricingGrid.scrollLeft = 0;
-                const pricingThumb = document.querySelector('.pricing-scrollbar-thumb');
-                if (pricingThumb) pricingThumb.style.transform = 'translateX(0%)';
+                // Reset scroll position, thumb position, and auto-swipe loop on category switch
+                if (window.resetPricingAutoSwipe) {
+                    window.resetPricingAutoSwipe();
+                } else {
+                    pricingGrid.scrollLeft = 0;
+                    const pricingThumb = document.querySelector('.pricing-scrollbar-thumb');
+                    if (pricingThumb) pricingThumb.style.transform = 'translateX(0%)';
+                }
                 
                 // Update grid UI dynamically
                 if(data && priceElements.length === 3) {
@@ -447,18 +451,98 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Pricing Cards Scrollbar Sync
+    // Pricing Cards Mobile Auto-Swipe & Scrollbar Sync
     const pricingGridElement = document.getElementById('pricing-grid');
     const pricingThumb = document.querySelector('.pricing-scrollbar-thumb');
 
-    if (pricingGridElement && pricingThumb) {
+    if (pricingGridElement) {
+        let currentPricingIndex = 0;
+        let pricingAutoSwipeInterval = null;
+        let isPricingUserInteracting = false;
+        let pricingPauseTimeout = null;
+
+        const getPricingCards = () => {
+            return pricingGridElement.querySelectorAll('.card');
+        };
+
+        const updatePricingScrollbar = () => {
+            if (pricingThumb) {
+                const maxScroll = pricingGridElement.scrollWidth - pricingGridElement.clientWidth;
+                if (maxScroll > 0) {
+                    const ratio = Math.min(Math.max(pricingGridElement.scrollLeft / maxScroll, 0), 1);
+                    pricingThumb.style.transform = `translateX(${ratio * 200}%)`;
+                }
+            }
+        };
+
+        const scrollToPricingCard = (index) => {
+            const cards = getPricingCards();
+            if (cards[index]) {
+                const targetLeft = cards[index].offsetLeft - pricingGridElement.offsetLeft - 24;
+                pricingGridElement.scrollTo({ left: Math.max(0, targetLeft), behavior: 'smooth' });
+                updatePricingScrollbar();
+            }
+        };
+
+        const nextPricingCard = () => {
+            if (isPricingUserInteracting) return;
+            const cards = getPricingCards();
+            if (cards.length > 0) {
+                currentPricingIndex = (currentPricingIndex + 1) % cards.length;
+                scrollToPricingCard(currentPricingIndex);
+            }
+        };
+
+        const startPricingAutoSwipe = () => {
+            stopPricingAutoSwipe();
+            pricingAutoSwipeInterval = setInterval(nextPricingCard, 2200);
+        };
+
+        const stopPricingAutoSwipe = () => {
+            if (pricingAutoSwipeInterval) clearInterval(pricingAutoSwipeInterval);
+        };
+
+        const handlePricingUserInteraction = () => {
+            isPricingUserInteracting = true;
+            stopPricingAutoSwipe();
+            if (pricingPauseTimeout) clearTimeout(pricingPauseTimeout);
+            pricingPauseTimeout = setTimeout(() => {
+                isPricingUserInteracting = false;
+                startPricingAutoSwipe();
+            }, 4000);
+        };
+
+        // Scroll listener to update scrollbar thumb & tracking index
         pricingGridElement.addEventListener('scroll', () => {
-            const maxScroll = pricingGridElement.scrollWidth - pricingGridElement.clientWidth;
-            if (maxScroll > 0) {
-                const ratio = Math.min(Math.max(pricingGridElement.scrollLeft / maxScroll, 0), 1);
-                pricingThumb.style.transform = `translateX(${ratio * 200}%)`;
+            updatePricingScrollbar();
+            const cards = getPricingCards();
+            if (cards.length > 0) {
+                const step = cards[0].offsetWidth + 16;
+                const index = Math.round(pricingGridElement.scrollLeft / step);
+                if (index >= 0 && index < cards.length) {
+                    currentPricingIndex = index;
+                }
             }
         });
+
+        // Touch & Mouse events for user interaction
+        pricingGridElement.addEventListener('touchstart', handlePricingUserInteraction, { passive: true });
+        pricingGridElement.addEventListener('mousedown', handlePricingUserInteraction);
+
+        // Global reset helper when category changes
+        window.resetPricingAutoSwipe = () => {
+            currentPricingIndex = 0;
+            if (pricingGridElement) pricingGridElement.scrollLeft = 0;
+            if (pricingThumb) pricingThumb.style.transform = 'translateX(0%)';
+            if (window.innerWidth <= 768) {
+                startPricingAutoSwipe();
+            }
+        };
+
+        // Start auto-swipe loop on mobile screens
+        if (window.innerWidth <= 768) {
+            startPricingAutoSwipe();
+        }
     }
 
 });
