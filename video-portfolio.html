@@ -154,13 +154,32 @@
 
         @media (max-width: 768px) {
             .portfolio-header {
-                padding: 6rem 1.5rem 1rem;
+                padding: 6rem 1rem 0.5rem;
             }
 
             .portfolio-header h1 {
                 font-size: 3rem !important;
                 line-height: 1.1;
                 margin-top: 2rem;
+            }
+
+            .portfolio-filter-container {
+                display: flex !important;
+                flex-direction: row !important;
+                flex-wrap: wrap !important;
+                justify-content: center !important;
+                align-items: center !important;
+                gap: 0.4rem !important;
+                margin: 1rem auto 2rem !important;
+                padding: 0 0.5rem !important;
+            }
+
+            .filter-btn {
+                padding: 0.3rem 0.65rem !important;
+                font-size: 0.72rem !important;
+                border-radius: 20px !important;
+                white-space: nowrap !important;
+                flex: 0 0 auto !important;
             }
 
             .portfolio-grid {
@@ -230,7 +249,7 @@
             
             <!-- Category Filter Pills -->
             <div class="portfolio-filter-container">
-                <button class="filter-btn active" data-filter="all">All Plan Samples</button>
+                <button class="filter-btn active" data-filter="all">All Samples</button>
                 <button class="filter-btn" data-filter="essential">Essential Plan</button>
                 <button class="filter-btn" data-filter="growth">Growth Plan</button>
                 <button class="filter-btn" data-filter="premium">Premium Plan</button>
