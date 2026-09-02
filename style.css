@@ -655,6 +655,41 @@ body::after {
     z-index: 1;
 }
 
+.scard-btn-group {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+    width: 100%;
+    align-items: center;
+}
+
+.scard-btn-group .scard-btn {
+    margin-top: 0 !important;
+    flex: 1;
+    text-align: center;
+    padding: 0.55rem 0.5rem !important;
+    font-size: 0.76rem !important;
+    justify-content: center;
+    white-space: nowrap;
+    box-sizing: border-box;
+    align-self: auto !important;
+    cursor: pointer;
+}
+
+.btn-contact-now {
+    background: rgba(37, 211, 102, 0.15) !important;
+    border-color: rgba(37, 211, 102, 0.6) !important;
+    color: #fff !important;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.2) !important;
+    cursor: pointer;
+}
+
+.btn-contact-now:hover {
+    background: rgba(37, 211, 102, 0.35) !important;
+    border-color: #25D366 !important;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.3) !important;
+}
+
 
 
 
@@ -2052,11 +2087,18 @@ html, body {
         font-size: 0.8rem;
     }
 
-    .scard-btn, .btn-contact-sales {
-        padding: 0.7rem 1.25rem !important;
-        font-size: 0.8rem;
-        border-radius: 30px !important;
+    .scard-btn-group {
+        gap: 0.4rem !important;
+        margin-top: 0.8rem !important;
         width: 100% !important;
+    }
+
+    .scard-btn-group .scard-btn {
+        padding: 0.45rem 0.35rem !important;
+        font-size: 0.62rem !important;
+        border-radius: 20px !important;
+        width: auto !important;
+        flex: 1 !important;
     }
 
     .badge {
