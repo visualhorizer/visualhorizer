@@ -310,7 +310,7 @@
 
 
 
-            <!-- Pricing Section -->
+            <!-- Pricing & Portfolio Section -->
             <section id="pricing" class="pricing">
                 <h2 class="section-title animate-fade-in">Pricing & Portfolio</h2>
                 <div class="toggle-container animate-fade-in delay-1">
@@ -322,84 +322,29 @@
                     </div>
                 </div>
 
-                <div class="pricing-cards" id="pricing-grid">
-                    <div class="card glass animate-slide-up delay-1">
-                        <h3>Essential Plan</h3>
-                        <div class="price">₹399<span class="price-unit">/ video</span></div>
-                        <div class="plan-subtitle">Fast, clean edits for consistent weekly uploads.</div>
-                        <ul class="features">
-                            <li>20–60 Sec Runtime</li>
-                            <li>Single Format Delivery (16:9 or 9:16)</li>
-                            <li>Clean Cut Assembly</li>
-                            <li>Animated Captions</li>
-                            <li>1 Revision Round</li>
-                            <li>2-Day Delivery</li>
-                        </ul>
-                        <a href="essential-editing-styles" target="_blank" class="btn btn-visit-portfolio">Visit Portfolio</a>
-                        <button class="btn btn-contact-sales" data-plan="Essential">Contact Sales</button>
-                    </div>
-                    <div class="card glass animate-slide-up delay-2">
-                        <div class="badge">MOST POPULAR</div>
-                        <h3>Growth Plan</h3>
-                        <div class="price">₹799<span class="price-unit">/ video</span></div>
-                        <div class="plan-subtitle">Everything in Essential + growth-focused polish</div>
-                        <ul class="features">
-                            <li>Retention-Optimized Pacing</li>
-                            <li>Premium Transitions & Overlays</li>
-                            <li>Custom Motion Graphics</li>
-                            <li>Generative AI B-Roll</li>
-                            <li>2 Revision Rounds</li>
-                            <li>2-Day Delivery</li>
-                        </ul>
-                        <a href="standard-editing-styles" target="_blank" class="btn btn-visit-portfolio">Visit Portfolio</a>
-                        <button class="btn btn-contact-sales" data-plan="Growth">Contact Sales</button>
-                    </div>
-                    <div class="card glass animate-slide-up delay-3">
-                        <h3>Premium Plan</h3>
-                        <div class="price">₹1,199<span class="price-unit">/ video</span></div>
-                        <div class="plan-subtitle">Everything in Growth + studio-level Quality.</div>
-                        <ul class="features">
-                            <li>Up to 90 Sec Runtime</li>
-                            <li>Cinematic Color Grading (Log/RAW)</li>
-                            <li>Sound Design</li>
-                            <li>AI-Generated Cinematic B-Roll</li>
-                            <li>3 Revision Rounds</li>
-                            <li>Priority 48-Hour Delivery</li>
-                        </ul>
-                        <a href="premium-editing-styles" target="_blank" class="btn btn-visit-portfolio">Visit Portfolio</a>
-                        <button class="btn btn-contact-sales" data-plan="Premium">Contact Sales</button>
-                    </div>
-                </div>
-
-                <div class="pricing-scrollbar-container">
-                    <div class="pricing-scrollbar-track">
-                        <div class="pricing-scrollbar-thumb"></div>
-                    </div>
-                </div>
-
-                <!-- Wide Card for Motion Graphics -->
-                <div class="pricing-cards-wide hidden" id="pricing-wide">
+                <!-- Single Common Wide Card for All Three Categories -->
+                <div class="pricing-cards-wide" id="pricing-wide">
                     <div class="card glass motion-banner">
                         <div class="banner-content">
-                            <h3 class="banner-title">Need Motion Graphics?</h3>
-                            <p class="banner-subtitle">Motion design requires precision. From hyper-realistic 3D elements to cinematic title sequences, we build bespoke motion assets tailored to your exact project scope.</p>
+                            <h3 class="banner-title" id="banner-title">Need Video Editing?</h3>
+                            <p class="banner-subtitle" id="banner-subtitle">High-impact storytelling for YouTube, Reels, and ads. We handle pacing, narrative flow, color grading, sound design, and AI visual assets tailored to your exact project scope.</p>
                             
-                            <div class="banner-points">
-                                <span class="point">Bespoke 2D Animation</span>
-                                <span class="point">Kinetic Typography</span>
-                                <span class="point">Dynamic UI Mockups</span>
+                            <div class="banner-points" id="banner-points">
+                                <span class="point">Retention-Optimized Pacing</span>
+                                <span class="point">Cinematic Color & Sound</span>
+                                <span class="point">Custom Motion & AI B-Roll</span>
                             </div>
 
-                            <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                                <a href="motion-portfolio" target="_blank" class="btn btn-visit-portfolio" style="width: auto; min-width: 250px; display: inline-block; margin: 0;">Visit Portfolio</a>
-                                <button class="btn btn-contact-sales" data-plan="Motion Graphics" style="width: auto; min-width: 250px; display: inline-block; margin: 0;">Get a Custom Quote</button>
+                            <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 1.5rem;" id="banner-actions">
+                                <a href="video-portfolio" id="banner-portfolio-btn" class="btn btn-visit-portfolio" style="width: auto; min-width: 220px; display: inline-block; margin: 0;">Visit Portfolio</a>
+                                <button class="btn btn-contact-sales" id="banner-quote-btn" data-plan="Video Editing" style="width: auto; min-width: 220px; display: inline-block; margin: 0;">Get a Custom Quote</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="pricing-footer animate-fade-in delay-2">
-                    <p>Don't see exactly what you need? <span class="highlight-text">Contact us</span> to discuss custom deliverables and flexible pricing.</p>
+                    <p id="pricing-footer-text">Don't see exactly what you need? <span class="highlight-text pulsate">Contact us</span> to discuss custom deliverables and flexible scope.</p>
                 </div>
             </section>
 
