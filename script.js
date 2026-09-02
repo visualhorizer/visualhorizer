@@ -350,25 +350,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Intersection Observer for scroll animations (.reveal system)
     const observerOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
+        threshold: 0.01,
+        rootMargin: "50px 0px 50px 0px"
     };
 
     const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('active');
+                entry.target.classList.add('active', 'is-visible');
                 
                 // Also activate staggered children
                 const staggered = entry.target.querySelectorAll('.stagger-item');
-                staggered.forEach(item => item.classList.add('active'));
+                staggered.forEach(item => item.classList.add('active', 'is-visible'));
             }
         });
     }, observerOptions);
 
-    document.querySelectorAll('.reveal, .animate-slide-up, .animate-fade-in').forEach(el => {
+    const animatedElements = document.querySelectorAll('.reveal, .animate-slide-up, .animate-fade-in');
+    animatedElements.forEach(el => {
         scrollObserver.observe(el);
     });
+
+    // Immediate check on load to reveal elements already in view or on desktop screens
+    const triggerInitialVisibility = () => {
+        animatedElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight + 100 && rect.bottom > -100) {
+                el.classList.add('active', 'is-visible');
+            }
+        });
+    };
+    triggerInitialVisibility();
+    setTimeout(triggerInitialVisibility, 200);
 
     // Service Overview Mobile Cards Auto-Swipe & Dots Sync
     const servicesGrid = document.getElementById('services-grid');
