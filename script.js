@@ -2,19 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // Navigations & Views
-    const btnViewPlans = document.getElementById('btn-view-plans');
     const btnBuildBundle = document.getElementById('btn-build-bundle');
     const btnBackHome = document.getElementById('btn-back-home');
     const defaultView = document.getElementById('default-view');
     const bundleView = document.getElementById('bundle-view');
-    const pricingSection = document.getElementById('pricing');
-
-    // Smooth scroll to Pricing
-    if (btnViewPlans) {
-        btnViewPlans.addEventListener('click', () => {
-            pricingSection.scrollIntoView({ behavior: 'smooth' });
-        });
-    }
 
     // Smooth scroll for all internal anchor links (Home, Services, Portfolio, Pricing, About) preventing hash addition to URL
     document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -102,77 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
     
-    // Pricing Category Toggle
-    const toggleOptions = document.querySelectorAll('.toggle-option');
-    const capsulePill = document.getElementById('capsule-pill');
-    let currentCategory = 'Video Editing'; // Default
-
-    // Dynamic Single Wide Banner Data for Pricing & Portfolio
-    const singleBannerData = {
-        'Video Editing': {
-            title: 'Need Video Editing?',
-            subtitle: 'High-impact storytelling for YouTube, Reels, and ads. We handle pacing, narrative flow, color grading, sound design, and AI visual assets tailored to your exact project scope.',
-            points: ['Retention-Optimized Pacing', 'Cinematic Color & Sound', 'Custom Motion & AI B-Roll'],
-            portfolioUrl: 'video-portfolio'
-        },
-        'Graphic Design': {
-            title: 'Need Graphic Design?',
-            subtitle: 'High-CTR thumbnails, social media creatives, and strategic brand identity systems designed to cut through the noise and elevate your brand aesthetic.',
-            points: ['High-CTR Thumbnails', 'Social Media Creatives', 'Strategic Brand Identity'],
-            portfolioUrl: 'graphic-portfolio'
-        },
-        'Motion Graphics': {
-            title: 'Need Motion Graphics?',
-            subtitle: 'Motion design requires precision. From hyper-realistic 3D elements to cinematic title sequences, we build bespoke motion assets tailored to your exact project scope.',
-            points: ['Bespoke 2D Animation', 'Kinetic Typography', 'Dynamic UI Mockups'],
-            portfolioUrl: 'motion-portfolio'
-        }
-    };
-
-    const bannerTitle = document.getElementById('banner-title');
-    const bannerSubtitle = document.getElementById('banner-subtitle');
-    const bannerPoints = document.getElementById('banner-points');
-    const bannerPortfolioBtn = document.getElementById('banner-portfolio-btn');
-    const bannerQuoteBtn = document.getElementById('banner-quote-btn');
-
-    toggleOptions.forEach((option, index) => {
-        option.addEventListener('click', () => {
-            // Remove active from all
-            toggleOptions.forEach(opt => opt.classList.remove('active'));
-            // Add active to clicked
-            option.classList.add('active');
-            
-            // Move the pill
-            capsulePill.style.transform = `translateX(${index * 100}%)`;
-
-            currentCategory = option.getAttribute('data-category');
-            const data = singleBannerData[currentCategory];
-
-            if (data) {
-                if (bannerTitle) bannerTitle.textContent = data.title;
-                if (bannerSubtitle) bannerSubtitle.textContent = data.subtitle;
-                if (bannerPoints) {
-                    bannerPoints.innerHTML = data.points.map(pt => `<span class="point">${pt}</span>`).join('');
-                }
-                if (bannerPortfolioBtn) bannerPortfolioBtn.setAttribute('href', data.portfolioUrl);
-                if (bannerQuoteBtn) bannerQuoteBtn.setAttribute('data-plan', currentCategory);
-            }
-        });
-    });
-
-    // WhatsApp Direct URLs for Contact Sales / Custom Quote
-    document.addEventListener('click', (e) => {
-        const btn = e.target.closest('.btn-contact-sales');
-        if (btn) {
-            const plan = btn.getAttribute('data-plan') || currentCategory;
-            const phone = "919048856350";
-            const message = `Hi, I am interested in getting a custom quote for ${plan}.`;
-            const encodedMsg = encodeURIComponent(message);
-            const whatappUrl = `https://wa.me/${phone}?text=${encodedMsg}`;
-            window.open(whatappUrl, '_blank');
-        }
-    });
-
     // Bundle Builder Logic
     const bundleStyle = document.getElementById('bundle-style');
     const bundleQty = document.getElementById('bundle-qty');
@@ -352,6 +272,8 @@ document.addEventListener("DOMContentLoaded", () => {
             startAutoSwipe();
         }
     }
+
+
 
     // Testimonials Display
     const testimonialCards = document.querySelectorAll('.testimonials-unified-box .testimonial-content');
