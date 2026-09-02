@@ -113,22 +113,19 @@ document.addEventListener("DOMContentLoaded", () => {
             title: 'Need Video Editing?',
             subtitle: 'High-impact storytelling for YouTube, Reels, and ads. We handle pacing, narrative flow, color grading, sound design, and AI visual assets tailored to your exact project scope.',
             points: ['Retention-Optimized Pacing', 'Cinematic Color & Sound', 'Custom Motion & AI B-Roll'],
-            portfolioUrl: 'video-portfolio',
-            footer: 'Don\'t see exactly what you need? <span class="highlight-text pulsate">Contact us</span> to discuss custom deliverables and flexible scope.'
+            portfolioUrl: 'video-portfolio'
         },
         'Graphic Design': {
             title: 'Need Graphic Design?',
             subtitle: 'High-CTR thumbnails, social media creatives, and strategic brand identity systems designed to cut through the noise and elevate your brand aesthetic.',
             points: ['High-CTR Thumbnails', 'Social Media Creatives', 'Strategic Brand Identity'],
-            portfolioUrl: 'graphic-portfolio',
-            footer: 'Scaling a brand? We offer tailored packages and volume-based solutions. <span class="highlight-text pulsate">Let’s build a custom creative workflow for you.</span>'
+            portfolioUrl: 'graphic-portfolio'
         },
         'Motion Graphics': {
             title: 'Need Motion Graphics?',
             subtitle: 'Motion design requires precision. From hyper-realistic 3D elements to cinematic title sequences, we build bespoke motion assets tailored to your exact project scope.',
             points: ['Bespoke 2D Animation', 'Kinetic Typography', 'Dynamic UI Mockups'],
-            portfolioUrl: 'motion-portfolio',
-            footer: 'Need specialized 3D assets or title packages? <span class="highlight-text pulsate">Get in touch for custom motion graphics quotes.</span>'
+            portfolioUrl: 'motion-portfolio'
         }
     };
 
@@ -137,7 +134,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const bannerPoints = document.getElementById('banner-points');
     const bannerPortfolioBtn = document.getElementById('banner-portfolio-btn');
     const bannerQuoteBtn = document.getElementById('banner-quote-btn');
-    const pricingFooterText = document.getElementById('pricing-footer-text');
 
     toggleOptions.forEach((option, index) => {
         option.addEventListener('click', () => {
@@ -160,7 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 if (bannerPortfolioBtn) bannerPortfolioBtn.setAttribute('href', data.portfolioUrl);
                 if (bannerQuoteBtn) bannerQuoteBtn.setAttribute('data-plan', currentCategory);
-                if (pricingFooterText) pricingFooterText.innerHTML = data.footer;
             }
         });
     });
