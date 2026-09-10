@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const pricingSection = document.getElementById('pricing');
 
     // Smooth scroll to Pricing
-    if (btnViewPlans && pricingSection) {
+    if (btnViewPlans) {
         btnViewPlans.addEventListener('click', () => {
             pricingSection.scrollIntoView({ behavior: 'smooth' });
         });
@@ -210,23 +210,23 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const pricingScrollbarContainer = document.querySelector('.pricing-scrollbar-container');
+
             if (currentCategory === 'Motion Graphics') {
-                if (pricingGrid) pricingGrid.classList.add('hidden');
-                if (pricingWide) pricingWide.classList.remove('hidden');
+                pricingGrid.classList.add('hidden');
+                pricingWide.classList.remove('hidden');
                 if (pricingScrollbarContainer) pricingScrollbarContainer.style.setProperty('display', 'none', 'important');
             } else {
-                if (pricingGrid) pricingGrid.classList.remove('hidden');
-                if (pricingWide) pricingWide.classList.add('hidden');
+                pricingGrid.classList.remove('hidden');
+                pricingWide.classList.add('hidden');
                 if (pricingScrollbarContainer) pricingScrollbarContainer.style.setProperty('display', '', '');
                 // Reset scroll position, thumb position, and auto-swipe loop on category switch
                 if (window.resetPricingAutoSwipe) {
                     window.resetPricingAutoSwipe();
-                } else if (pricingGrid) {
+                } else {
                     pricingGrid.scrollLeft = 0;
                     const pricingThumb = document.querySelector('.pricing-scrollbar-thumb');
                     if (pricingThumb) pricingThumb.style.transform = 'translateX(0%)';
                 }
-            }
                 
                 // Update grid UI dynamically
                 if(data && priceElements.length === 3) {
@@ -350,38 +350,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Intersection Observer for scroll animations (.reveal system)
     const observerOptions = {
-        threshold: 0.01,
-        rootMargin: "50px 0px 50px 0px"
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
     };
 
     const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('active', 'is-visible');
+                entry.target.classList.add('active');
                 
                 // Also activate staggered children
                 const staggered = entry.target.querySelectorAll('.stagger-item');
-                staggered.forEach(item => item.classList.add('active', 'is-visible'));
+                staggered.forEach(item => item.classList.add('active'));
             }
         });
     }, observerOptions);
 
-    const animatedElements = document.querySelectorAll('.reveal, .animate-slide-up, .animate-fade-in');
-    animatedElements.forEach(el => {
+    document.querySelectorAll('.reveal, .animate-slide-up, .animate-fade-in').forEach(el => {
         scrollObserver.observe(el);
     });
-
-    // Immediate check on load to reveal elements already in view or on desktop screens
-    const triggerInitialVisibility = () => {
-        animatedElements.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight + 100 && rect.bottom > -100) {
-                el.classList.add('active', 'is-visible');
-            }
-        });
-    };
-    triggerInitialVisibility();
-    setTimeout(triggerInitialVisibility, 200);
 
     // Service Overview Mobile Cards Auto-Swipe & Dots Sync
     const servicesGrid = document.getElementById('services-grid');
