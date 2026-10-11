@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const pricingSection = document.getElementById('pricing');
 
     // Smooth scroll to Pricing
-    if (btnViewPlans) {
+    if (btnViewPlans && pricingSection) {
         btnViewPlans.addEventListener('click', () => {
             pricingSection.scrollIntoView({ behavior: 'smooth' });
         });
