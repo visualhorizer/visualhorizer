@@ -749,14 +749,15 @@ body::after {
 
 /* Pricing Section */
 .pricing, .pricing-portfolio-section {
-    padding: 3rem 1.5rem 2.5rem 1.5rem;
-    max-width: 850px;
+    padding: 4rem 4rem 3rem 4rem;
+    max-width: 1000px;
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .pricing-portfolio-header {
     text-align: center;
-    margin-bottom: 1.75rem;
+    margin-bottom: 2rem;
 }
 
 .pricing-portfolio-header .section-title {
@@ -765,8 +766,8 @@ body::after {
 }
 
 .pricing-accordion {
-    padding: 0.6rem 1.5rem;
-    border-radius: 18px;
+    padding: 0.6rem 1.75rem;
+    border-radius: 20px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -776,8 +777,8 @@ body::after {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.35), inset 0 1px 1px rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
-    max-width: 850px;
-    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .accordion-item {
@@ -1227,7 +1228,7 @@ body::after {
 /* Responsive Media Queries */
 @media (max-width: 992px) {
     .pricing, .pricing-portfolio-section {
-        padding: 3.5rem 1.5rem 2.5rem 1.5rem;
+        padding: 3.5rem 4rem 2.5rem 4rem;
     }
     .plan-cards-container {
         gap: 1.25rem;
