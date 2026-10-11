@@ -8,10 +8,10 @@
     <link rel="icon" type="image/png" sizes="96x96" href="Images/favicon/favicon-96x96.png">
     <link rel="apple-touch-icon" sizes="180x180" href="Images/favicon/apple-touch-icon.png">
     <link rel="manifest" href="Images/favicon/site.webmanifest">
-    <meta name="description" content="200+ projects delivered, 20+ clients, 3+ countries reached. Explore Essential, Growth, and Premium Video Editing Samples.">
+    <meta name="description" content="200+ projects delivered, 20+ clients, 3+ countries reached. Explore our Video Editing Portfolio Showcase.">
     <!-- Open Graph tags for social sharing -->
     <meta property="og:title" content="Visual Horizer | Video Editing Portfolio">
-    <meta property="og:description" content="200+ projects delivered, 20+ clients, 3+ countries reached. Explore Essential, Growth, and Premium Video Editing Samples.">
+    <meta property="og:description" content="200+ projects delivered, 20+ clients, 3+ countries reached. Explore our Video Editing Portfolio Showcase.">
     <meta property="og:image" content="Images/favicon/web-app-manifest-512x512.png">
     <meta property="og:type" content="website">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,40 +20,8 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .portfolio-header {
-            padding: 8rem 2rem 1.5rem 2rem;
+            padding: 8rem 2rem 2.5rem 2rem;
             text-align: center;
-        }
-
-        .portfolio-filter-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.75rem;
-            margin: 1.5rem auto 3rem;
-            flex-wrap: wrap;
-            padding: 0 1.5rem;
-        }
-
-        .filter-btn {
-            padding: 0.6rem 1.5rem;
-            border-radius: 30px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-
-        .filter-btn.active, .filter-btn:hover {
-            background: rgba(67, 97, 238, 0.3);
-            color: #fff;
-            border-color: rgba(67, 97, 238, 0.8);
-            box-shadow: 0 0 20px rgba(67, 97, 238, 0.4);
-            transform: translateY(-2px);
         }
 
         .portfolio-grid {
@@ -103,35 +71,6 @@
             flex-direction: column;
         }
 
-        .plan-badge {
-            align-self: flex-start;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.68rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 0.75rem;
-        }
-
-        .plan-badge.essential {
-            background: rgba(56, 189, 248, 0.15);
-            color: #38bdf8;
-            border: 1px solid rgba(56, 189, 248, 0.4);
-        }
-
-        .plan-badge.growth {
-            background: rgba(129, 140, 248, 0.15);
-            color: #818cf8;
-            border: 1px solid rgba(129, 140, 248, 0.4);
-        }
-
-        .plan-badge.premium {
-            background: rgba(192, 132, 252, 0.15);
-            color: #c084fc;
-            border: 1px solid rgba(192, 132, 252, 0.4);
-        }
-
         .video-title {
             font-size: 1.2rem;
             font-weight: 600;
@@ -154,34 +93,13 @@
 
         @media (max-width: 768px) {
             .portfolio-header {
-                padding: 6rem 1rem 0.5rem;
+                padding: 6rem 1rem 1.5rem;
             }
 
             .portfolio-header h1 {
                 font-size: 3rem !important;
                 line-height: 1.1;
                 margin-top: 2rem;
-            }
-
-            .portfolio-filter-container {
-                display: flex !important;
-                flex-direction: row !important;
-                flex-wrap: nowrap !important;
-                justify-content: center !important;
-                align-items: center !important;
-                gap: 0.25rem !important;
-                margin: 0.75rem auto 1.5rem !important;
-                padding: 0 0.25rem !important;
-                width: 100% !important;
-                box-sizing: border-box !important;
-            }
-
-            .filter-btn {
-                padding: 0.18rem 0.45rem !important;
-                font-size: 0.58rem !important;
-                border-radius: 12px !important;
-                white-space: nowrap !important;
-                flex: 0 0 auto !important;
             }
 
             .portfolio-grid {
@@ -249,132 +167,93 @@
             </div>
             
             <!-- Category Filter Pills -->
-            <div class="portfolio-filter-container">
-                <button class="filter-btn active" data-filter="all">All Samples</button>
-                <button class="filter-btn" data-filter="essential">Essential Plan</button>
-                <button class="filter-btn" data-filter="growth">Growth Plan</button>
-                <button class="filter-btn" data-filter="premium">Premium Plan</button>
-            </div>
         </section>
 
         <section class="portfolio-grid" id="video-portfolio-grid">
 
-            <!-- ESSENTIAL PLAN SAMPLES -->
-            <div class="video-card glass" data-category="essential">
+            <div class="video-card glass">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/1198926764" title="Essential Editing Showcase - I" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1198926764" title="Video Editing Showcase - I" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="video-info">
-                    <span class="plan-badge essential">Essential Plan</span>
-                    <h3 class="video-title">Essential Editing Style Showcase - I</h3>
-                    <p class="video-desc">A clean, high-impact video edit highlighting essential narrative assembly, dynamic vertical framing (9:16), and engaging kinetic captions.</p>
+                    <h3 class="video-title">Video Editing Showcase - I</h3>
+                    <p class="video-desc">A clean, high-impact video edit highlighting narrative assembly, dynamic vertical framing (9:16), and engaging kinetic captions.</p>
                 </div>
             </div>
 
-            <div class="video-card glass" data-category="essential">
+            <div class="video-card glass">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/1198927261" title="Essential Editing Showcase - II" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1198927261" title="Video Editing Showcase - II" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="video-info">
-                    <span class="plan-badge essential">Essential Plan</span>
-                    <h3 class="video-title">Essential Editing Style Showcase - II</h3>
+                    <h3 class="video-title">Video Editing Showcase - II</h3>
                     <p class="video-desc">A dynamic showcase featuring vertical formatting (9:16), animated text captions, and clean pacing edits.</p>
                 </div>
             </div>
 
-            <div class="video-card glass" data-category="essential">
+            <div class="video-card glass">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/1198927735" title="Essential Editing Showcase - III" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1198927735" title="Video Editing Showcase - III" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="video-info">
-                    <span class="plan-badge essential">Essential Plan</span>
-                    <h3 class="video-title">Essential Editing Style Showcase - III</h3>
+                    <h3 class="video-title">Video Editing Showcase - III</h3>
                     <p class="video-desc">A clean horizontal edit featuring simple titles, smooth pacing, and balanced layout assembly.</p>
                 </div>
             </div>
 
-            <!-- GROWTH PLAN SAMPLES -->
-            <div class="video-card glass" data-category="growth">
+            <div class="video-card glass">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/1198924566" title="Growth Editing Showcase - I" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1198924566" title="Video Editing Showcase - IV" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="video-info">
-                    <span class="plan-badge growth">Growth Plan</span>
-                    <h3 class="video-title">Growth Editing Style Showcase - I</h3>
-                    <p class="video-desc">A premium, retention-focused video edit showing clean narration flow, sound design elements, and seamless pacing adjustments.</p>
+                    <h3 class="video-title">Video Editing Showcase - IV</h3>
+                    <p class="video-desc">A retention-focused video edit showing clean narration flow, sound design elements, and seamless pacing adjustments.</p>
                 </div>
             </div>
 
-            <div class="video-card glass" data-category="growth">
+            <div class="video-card glass">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/1198925190" title="Growth Editing Showcase - II" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1198925190" title="Video Editing Showcase - V" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="video-info">
-                    <span class="plan-badge growth">Growth Plan</span>
-                    <h3 class="video-title">Growth Editing Style Showcase - II</h3>
-                    <p class="video-desc">An engaging standard edit featuring clean transitions, typography animations, and precise audio leveling.</p>
+                    <h3 class="video-title">Video Editing Showcase - V</h3>
+                    <p class="video-desc">An engaging edit featuring clean transitions, typography animations, and precise audio leveling.</p>
                 </div>
             </div>
 
-            <div class="video-card glass" data-category="growth">
+            <div class="video-card glass">
                 <div class="video-container">
-                    <iframe src="https://player.vimeo.com/video/1180024954" title="Growth Editing Showcase - III" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe src="https://player.vimeo.com/video/1180024954" title="Video Editing Showcase - VI" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="video-info">
-                    <span class="plan-badge growth">Growth Plan</span>
-                    <h3 class="video-title">Growth Editing Style Showcase - III</h3>
+                    <h3 class="video-title">Video Editing Showcase - VI</h3>
                     <p class="video-desc">A professional video compilation demonstrating advanced multi-cam sequencing, sound dynamic effects, and structured pacing.</p>
                 </div>
             </div>
 
-            <!-- PREMIUM PLAN SAMPLES -->
-            <div class="video-card glass" data-category="premium">
+            <div class="video-card glass">
                 <div class="video-container">
                     <iframe src="https://player.vimeo.com/video/1179795479" title="Cinematic Automotive Edit" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="video-info">
-                    <span class="plan-badge premium">Premium Plan</span>
                     <h3 class="video-title">Cinematic Automotive Edit</h3>
                     <p class="video-desc">A moody, fast-paced automotive edit highlighting cinematic color grading, raw mechanical sound design, and custom motion overlays.</p>
                 </div>
             </div>
 
-            <div class="video-card glass" data-category="premium">
+            <div class="video-card glass">
                 <div class="video-container">
                     <iframe src="https://player.vimeo.com/video/1180028027" title="AI Product Explainer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <div class="video-info">
-                    <span class="plan-badge premium">Premium Plan</span>
                     <h3 class="video-title">AI Product Explainer</h3>
                     <p class="video-desc">This edit effectively blends narrative problem-solving with sleek motion graphics, photorealistic AI B-roll, and UI overlays.</p>
+                </div>
             </div>
 
         </section>
     </main>
 
     <script src="script.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const videoCards = document.querySelectorAll('.video-card');
-
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-
-                    const filter = btn.getAttribute('data-filter');
-
-                    videoCards.forEach(card => {
-                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                            card.style.display = 'flex';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>
