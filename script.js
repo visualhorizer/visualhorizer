@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Spotlight mouse tracking effect for all interactive cards
-    const glowCards = document.querySelectorAll('.scard, .card, .video-card, .glass-card, .value-box, .extra-item, .wide-card, .summary-box, .btn-primary, .scard-btn, .nav-contact, .btn-contact-sales, .wide-btn, .dropdown-content a, .mobile-link, .pricing-accordion, .accordion-header, .accordion-btn');
+    const glowCards = document.querySelectorAll('.scard, .card, .video-card, .glass-card, .value-box, .extra-item, .wide-card, .summary-box, .btn-primary, .scard-btn, .nav-contact, .btn-contact-sales, .wide-btn, .dropdown-content a, .mobile-link, .pricing-accordion, .accordion-header, .accordion-btn, .plan-card, .plan-cta-btn');
     glowCards.forEach(c => {
         c.addEventListener('mousemove', (e) => {
             const rect = c.getBoundingClientRect();
