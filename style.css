@@ -2436,7 +2436,9 @@ html, body {
         overflow-x: auto !important;
         scroll-snap-type: x mandatory;
         -webkit-overflow-scrolling: touch;
-        touch-action: pan-x;
+        touch-action: pan-x pan-y !important;
+        overscroll-behavior-y: auto !important;
+        overscroll-behavior-x: contain !important;
         gap: 1rem !important;
         width: 100vw !important;
         margin-left: calc(-50vw + 50%) !important;
@@ -2517,6 +2519,11 @@ html, body {
         border: 1px solid rgba(255, 255, 255, 0.18) !important;
         border-radius: 16px !important;
         box-sizing: border-box !important;
+        touch-action: pan-x pan-y !important;
+    }
+
+    .services-grid .scard * {
+        touch-action: pan-x pan-y !important;
     }
     
     .services-grid .scard-title {

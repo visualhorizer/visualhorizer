@@ -245,6 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Touch & Mouse events for user interaction
         servicesGrid.addEventListener('touchstart', handleUserInteraction, { passive: true });
+        servicesGrid.addEventListener('touchmove', handleUserInteraction, { passive: true });
         servicesGrid.addEventListener('mousedown', handleUserInteraction);
 
         // Click dots to scroll directly
