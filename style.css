@@ -338,6 +338,14 @@ body::after {
     display: none !important;
 }
 
+.desktop-only {
+    display: block;
+}
+
+.mobile-only {
+    display: none;
+}
+
 /* Glassmorphism Classes */
 .glass {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
@@ -1236,15 +1244,50 @@ body::after {
 }
 
 @media (max-width: 768px) {
-    .pricing, .pricing-portfolio-section {
-        padding: 3rem 1rem 2rem 1rem;
+    .desktop-only {
+        display: none !important;
     }
-    .pricing-portfolio-header .section-title {
-        font-size: 1.8rem;
+    .mobile-only {
+        display: block !important;
+    }
+
+    .pricing, .pricing-portfolio-section {
+        padding: 2rem 0 2.5rem 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .pricing-portfolio-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
     .pricing-accordion {
-        padding: 0.25rem 0.75rem;
-        border-radius: 16px;
+        width: 100% !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        border-left: none !important;
+        border-right: none !important;
+        border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+        padding: 1.25rem 1rem 1.5rem 1rem !important;
+        box-sizing: border-box !important;
+    }
+    .pricing-accordion .pricing-portfolio-header {
+        margin-bottom: 0.85rem !important;
+        text-align: center !important;
+        padding-top: 0.25rem !important;
+        padding-bottom: 0.85rem !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+    .pricing-accordion .pricing-portfolio-header .section-title {
+        font-size: 1.4rem !important;
+        margin-bottom: 0 !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1px !important;
+        color: #fff !important;
     }
     .accordion-header {
         padding: 1.15rem 0.25rem;
@@ -1303,8 +1346,8 @@ body::after {
 }
 
 @media (max-width: 480px) {
-    .pricing-portfolio-header .section-title {
-        font-size: 1.55rem;
+    .pricing-accordion .pricing-portfolio-header .section-title {
+        font-size: 1.25rem !important;
     }
     .accordion-title {
         font-size: 0.92rem;
