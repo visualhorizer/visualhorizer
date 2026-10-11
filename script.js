@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Spotlight mouse tracking effect for all interactive cards
-    const glowCards = document.querySelectorAll('.scard, .card, .video-card, .glass-card, .value-box, .extra-item, .wide-card, .summary-box, .btn-primary, .scard-btn, .nav-contact, .btn-contact-sales, .wide-btn, .dropdown-content a, .mobile-link');
+    const glowCards = document.querySelectorAll('.scard, .card, .video-card, .glass-card, .value-box, .extra-item, .wide-card, .summary-box, .btn-primary, .scard-btn, .nav-contact, .btn-contact-sales, .wide-btn, .dropdown-content a, .mobile-link, .pricing-accordion, .accordion-header, .accordion-btn');
     glowCards.forEach(c => {
         c.addEventListener('mousemove', (e) => {
             const rect = c.getBoundingClientRect();
@@ -269,6 +269,31 @@ document.addEventListener("DOMContentLoaded", () => {
         testimonialCards.forEach(card => {
             card.style.display = 'flex';
             card.style.opacity = '1';
+        });
+    }
+
+    // Pricing & Portfolio Accordion Logic
+    const accordionItems = document.querySelectorAll('.pricing-accordion .accordion-item');
+    if (accordionItems.length > 0) {
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            if (header) {
+                header.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('active');
+                    
+                    // Toggle current item and close other open items
+                    accordionItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                        const otherHeader = otherItem.querySelector('.accordion-header');
+                        if (otherHeader) otherHeader.setAttribute('aria-expanded', 'false');
+                    });
+
+                    if (!isOpen) {
+                        item.classList.add('active');
+                        header.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            }
         });
     }
 
